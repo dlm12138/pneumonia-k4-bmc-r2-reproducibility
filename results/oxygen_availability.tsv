@@ -1,0 +1,7 @@
+database	population	N	events	SpO2_missing
+MIMIC-IV	assigned	14636	281	8
+MIMIC-IV	primary_model	14636	281	8
+MIMIC-III	assigned	3690	56	0
+MIMIC-III	primary_model	3690	56	0
+eICU	assigned	14781	341	114
+eICU	primary_model	14779	341	114

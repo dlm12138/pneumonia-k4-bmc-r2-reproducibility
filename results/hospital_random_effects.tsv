@@ -1,0 +1,3 @@
+model	N	events	hospitals	OR	CI_low	CI_high	random_intercept_SD	random_slope_SD	converged	singular	fixed_formula	nAGQ	optimizer	inference
+random_intercept	8799	190	188	3.62722825779434	2.59858486766062	5.06305758871989	0.409929164804514		True	False	death_24h ~ p3 + age10 + male + coverage10	1	bobyqa	条件关联OR；Wald区间；不等同因果效应
+random_intercept_and_p3_slope	8799	190	188	2.86089445330079	1.67880580064538	4.87532093931339	0.320044309689547	0.576157366101199	True	False	death_24h ~ p3 + age10 + male + coverage10	1	bobyqa	条件关联OR；Wald区间；不等同因果效应

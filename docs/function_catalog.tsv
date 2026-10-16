@@ -1,0 +1,300 @@
+program	symbol	kind	public_line	signature	description
+code/core/association.py	fit_logistic	FunctionDef	67	x: np.ndarray, y: np.ndarray, frequency_weights: np.ndarray | None=None, max_iter: int=100, tolerance: float=1e-10	
+code/core/association.py	robust_covariance	FunctionDef	92	x: np.ndarray, y: np.ndarray, beta: np.ndarray, cluster: np.ndarray | None	
+code/core/association.py	prepare_model_data	FunctionDef	120	source: pd.DataFrame, outcome: str, require_apache: bool=False	
+code/core/association.py	design_matrix	FunctionDef	152	frame: pd.DataFrame, covariates: list[str]	
+code/core/association.py	counterfactual_matrix	FunctionDef	169	x: np.ndarray, phenotype: str	
+code/core/association.py	bootstrap_risks	FunctionDef	181	x: np.ndarray, y: np.ndarray, clusters: np.ndarray | None, seed_offset: int	
+code/core/association.py	run_model	FunctionDef	220	frame: pd.DataFrame, outcome: str, model_name: str, covariates: list[str], seed_offset: int	
+code/core/audited_fit.py	check	FunctionDef	15	name, ok, detail=''	
+code/core/audited_fit.py	effective	FunctionDef	20	f, cov, key	
+code/core/audited_fit.py	audit	FunctionDef	30	f, outcome, key, cov, marker=False	
+code/core/audited_fit.py	fit	FunctionDef	55	f, outcome, name, cov, seed, marker=False	
+code/core/clinical.py	summary_continuous	FunctionDef	46	values: pd.Series	
+code/core/clinical.py	summary_binary	FunctionDef	56	values: pd.Series	
+code/core/clinical.py	smd	FunctionDef	63	left: pd.Series, right: pd.Series	
+code/core/clinical.py	variable_specs	FunctionDef	72		
+code/core/clinical.py	characterize	FunctionDef	164	data: pd.DataFrame	
+code/core/clinical.py	stress_profile	FunctionDef	216	data: pd.DataFrame	
+code/core/clinical.py	append_vital_summaries	FunctionDef	278	data: pd.DataFrame	
+code/core/domain_shift.py	observed_component_log_likelihood	FunctionDef	49	raw: np.ndarray, standardization_means: np.ndarray, standardization_sds: np.ndarray, model	
+code/core/domain_shift.py	assigned_mahalanobis	FunctionDef	80	raw: np.ndarray, assigned_component: np.ndarray, standardization_means: np.ndarray, standardization_sds: np.ndarray, model	
+code/core/domain_shift.py	jensen_shannon_divergence	FunctionDef	108	left: np.ndarray, right: np.ndarray	
+code/core/domain_shift.py	feature_shift	FunctionDef	117	frame: pd.DataFrame	
+code/core/domain_shift.py	prevalence_shift	FunctionDef	165	assignments: pd.DataFrame	
+code/core/domain_shift.py	distribution_summary	FunctionDef	208	frame: pd.DataFrame, variable: str, threshold: float, threshold_name: str	
+code/core/domain_shift.py	posterior_summary	FunctionDef	237	frame: pd.DataFrame	
+code/core/early_assignment.py	observed_log_likelihood	FunctionDef	37	raw: np.ndarray, standardization_means: np.ndarray, standardization_sds: np.ndarray, model: GaussianMixture, feature_indices: np.ndarray | None=None	
+code/core/early_assignment.py	assign	FunctionDef	136	raw: np.ndarray, means: np.ndarray, sds: np.ndarray, model: GaussianMixture, feature_indices: np.ndarray | None=None	
+code/core/hospital.py	site_effects	FunctionDef	37	frame: pd.DataFrame	
+code/core/hospital.py	loho	FunctionDef	101	frame: pd.DataFrame	
+code/core/locked_k4.py	observed_dimension_log_likelihood	FunctionDef	19	standardized_values: np.ndarray, model: Any	Return component log likelihoods using only observed dimensions.
+code/core/locked_k4.py	assign_locked_k4	FunctionDef	50	raw_values: np.ndarray, standardization_means: np.ndarray, standardization_sds: np.ndarray, model: Any, component_to_phenotype: dict[int, str]	Assign eligible rows and return phenotype labels and posteriors.
+code/core/oxygen.py	aggregate_hourly_spo2	FunctionDef	42	hourly: pd.DataFrame	Recreate the historical unweighted hourly-summary definition.
+code/core/posterior.py	write_csv	FunctionDef	35	frame, name	
+code/core/posterior.py	fit_glm	FunctionDef	49	frame: pd.DataFrame, formula: str, weight: pd.Series | None=None, cluster: pd.Series | None=None	
+code/core/posterior.py	model_effect	FunctionDef	100	result, term: str	
+code/core/posterior.py	prepare_model_frame	FunctionDef	113	frame: pd.DataFrame, outcome: str	
+code/core/posterior.py	posterior_uncertainty_analysis	FunctionDef	124	analysis: pd.DataFrame	
+code/core/prediction.py	trajectory_summaries	FunctionDef	52		
+code/core/prediction.py	calibration_metrics	FunctionDef	102	outcome: np.ndarray, probability: np.ndarray	
+code/core/prediction.py	metric_values	FunctionDef	113	outcome: np.ndarray, probability: np.ndarray	
+code/core/prediction.py	prediction_pipeline	FunctionDef	125	numeric: list[str], categorical: list[str]	
+code/core/prediction.py	grouped_bootstrap_indices	FunctionDef	154	groups: np.ndarray, rng: np.random.Generator	
+code/core/prediction.py	bootstrap_prediction_metrics	FunctionDef	161	outcome: np.ndarray, predictions: dict[str, np.ndarray], groups: np.ndarray, database: str	
+code/core/prediction.py	marker_association	FunctionDef	254	frame: pd.DataFrame, database: str, model_name: str, covariates: list[str], severity_module: Any, seed_offset: int	
+code/core/raw_vitals.py	log	FunctionDef	35	message	
+code/core/raw_vitals.py	source_parts	FunctionDef	67	path	
+code/core/raw_vitals.py	open_source	FunctionDef	75	path	
+code/core/raw_vitals.py	available_columns	FunctionDef	88	path	
+code/core/raw_vitals.py	actual_usecols	FunctionDef	99	path, usecols	
+code/core/raw_vitals.py	read_csv_chunks	FunctionDef	107	path, usecols=None, chunksize=600000	
+code/core/raw_vitals.py	read_csv_full	FunctionDef	120	path, usecols=None	
+code/core/raw_vitals.py	label_to_var	FunctionDef	133	label	
+code/core/raw_vitals.py	clean_value	FunctionDef	172	var, value, uom=''	
+code/core/raw_vitals.py	add_agg	FunctionDef	188	agg, db, stay_id, hour, var, val, source_table, source_item	
+code/core/raw_vitals.py	scan_mimic_items	FunctionDef	197	db, d_items_path	
+code/core/raw_vitals.py	scan_mimic_vitals	FunctionDef	224	db, paths, candidates, item_map	
+code/core/raw_vitals.py	scan_eicu_vitals	FunctionDef	273	paths, candidates	
+code/core/raw_vitals.py	normalize_candidate_frame	FunctionDef	325	db, final, id_col	
+code/core/raw_vitals.py	build_hourly_tables	FunctionDef	360	candidates_all, agg	
+code/core/raw_vitals.py	build_patient_matrix	FunctionDef	424	candidates_all, wide_df	
+code/core/secondary_events.py	normalize	FunctionDef	40	frame	
+code/core/secondary_events.py	evidence	FunctionDef	47	frame	
+code/core/secondary_events.py	classify_vector	FunctionDef	64	z, horizon	
+code/core/secondary_events.py	classify_scalar	FunctionDef	73	support, death, discharge, horizon	
+code/core/selection.py	weighted_moments	FunctionDef	51	values: pd.Series, weights: np.ndarray | None=None	
+code/core/selection.py	standardized_difference	FunctionDef	67	target_values: pd.Series, selected_values: pd.Series, weights: np.ndarray | None=None	
+code/core/selection.py	fit_outcome_glm	FunctionDef	79	frame: pd.DataFrame, formula: str, weights: pd.Series | None, cluster: pd.Series | None	
+code/core/selection.py	effect_row	FunctionDef	130	result, term: str	
+code/core/selection.py	summarize_distribution	FunctionDef	143	values: pd.Series	
+code/core/time_order.py	FixedMaskScorer	ClassDef	52		Exact implementation retained from the 2026-08-01 analysis.
+code/core/time_order.py	transform_raw	FunctionDef	96	raw: np.ndarray, mode: str, rng: np.random.Generator | None=None	Exact transform retained from the 2026-08-01 analysis.
+code/core/time_order.py	effect_estimates	FunctionDef	128	module, frame: pd.DataFrame, labels: np.ndarray	
+code/core/time_order.py	distribution	FunctionDef	211	labels: np.ndarray	
+code/core/time_order.py	audit_transform	FunctionDef	218	database: str, raw: np.ndarray, transformed: np.ndarray, mode: str	
+code/release_runtime.py	load_actual	FunctionDef	9	path, name='actual_study_functions'	
+code/release_runtime.py	init_output	FunctionDef	17	root	
+code/release_runtime.py	public_result_path	FunctionDef	22	name	
+code/render_sql.py	render	FunctionDef	4	template, raw_database_dir, selected_keys	
+code/run_source_reference.py	main	FunctionDef	5		
+code/source_history/assembly/07_landmark_source_functions.py	normalize_id	FunctionDef	34	series: pd.Series	
+code/source_history/assembly/07_landmark_source_functions.py	load_hourly_sources	FunctionDef	37		
+code/source_history/assembly/07_landmark_source_functions.py	build_landmark_candidates	FunctionDef	65		
+code/source_history/assembly/07_landmark_source_functions.py	build_landmark_matrix	FunctionDef	122	candidates: pd.DataFrame, hourly_sources: pd.DataFrame	
+code/source_history/assembly/08_candidate_attribute_source.py	normalize_database	FunctionDef	42	series: pd.Series	
+code/source_history/assembly/08_candidate_attribute_source.py	eligible_mask	FunctionDef	45	frame: pd.DataFrame	
+code/source_history/assembly/08_candidate_attribute_source.py	load_data	FunctionDef	53		
+code/source_history/assembly/09_organ_support_endpoints.py	log	FunctionDef	39	message: str	
+code/source_history/assembly/09_organ_support_endpoints.py	write_csv	FunctionDef	42	frame: pd.DataFrame, filename: str	
+code/source_history/assembly/09_organ_support_endpoints.py	numeric_id	FunctionDef	45	series: pd.Series	
+code/source_history/assembly/09_organ_support_endpoints.py	read_filtered_csv	FunctionDef	48	path: Path, usecols: list[str], id_column: str, eligible_ids: set[int], item_column: str | None=None, item_ids: set[int] | None=None, chunksize: int=500000	
+code/source_history/assembly/09_organ_support_endpoints.py	first_after	FunctionDef	63	events: pd.DataFrame, id_column: str, time_column: str, lower: float	
+code/source_history/assembly/09_organ_support_endpoints.py	interval_active	FunctionDef	69	events: pd.DataFrame, id_column: str, start_column: str, end_column: str, landmark: float	
+code/source_history/assembly/09_organ_support_endpoints.py	assemble_endpoint	FunctionDef	77	base: pd.DataFrame, id_column: str, active_vaso: pd.Series, active_mv: pd.Series, active_rrt: pd.Series, first_vaso: pd.Series, first_mv: pd.Series, first_rrt: pd.Series, death_time: pd.Series, database: str, support_source_scope: str, time_unit: str	
+code/source_history/assembly/09_organ_support_endpoints.py	mimiciv	FunctionDef	109	assignments: pd.DataFrame	
+code/source_history/assembly/09_organ_support_endpoints.py	mimiciii_metavision	FunctionDef	149	assignments: pd.DataFrame	
+code/source_history/assembly/09_organ_support_endpoints.py	eicu	FunctionDef	191	assignments: pd.DataFrame	
+code/source_history/assembly/09_organ_support_endpoints.py	endpoint_summary	FunctionDef	240	endpoints: pd.DataFrame	
+code/source_history/assembly/09_organ_support_endpoints.py	main	FunctionDef	254		
+code/source_history/assembly/10_diagnosis_recovery_functions.py	log	FunctionDef	43	text	
+code/source_history/assembly/10_diagnosis_recovery_functions.py	quote	FunctionDef	46	path	
+code/source_history/assembly/10_diagnosis_recovery_functions.py	query	FunctionDef	49	sql	
+code/source_history/assembly/10_diagnosis_recovery_functions.py	parquet	FunctionDef	53	path	
+code/source_history/assembly/10_diagnosis_recovery_functions.py	save	FunctionDef	56	frame, name	
+code/source_history/assembly/10_diagnosis_recovery_functions.py	private_save	FunctionDef	59	frame, name	
+code/source_history/assembly/10_diagnosis_recovery_functions.py	check	FunctionDef	68	module, name, actual, expected, tolerance=0	
+code/source_history/assembly/10_diagnosis_recovery_functions.py	normalise	FunctionDef	75	frame	
+code/source_history/assembly/10_diagnosis_recovery_functions.py	keys	FunctionDef	82	frame	
+code/source_history/assembly/10_diagnosis_recovery_functions.py	model_fit	FunctionDef	85	frame, extra=(), outcome='death_24h'	
+code/source_history/assembly/10_diagnosis_recovery_functions.py	flow	FunctionDef	133	candidate	
+code/source_history/assembly/10_diagnosis_recovery_functions.py	literals	FunctionDef	175	path, names	
+code/source_history/assembly/10_diagnosis_recovery_functions.py	mimic_evidence	FunctionDef	186	candidate, endpoint	
+code/source_history/assembly/10_diagnosis_recovery_functions.py	eicu_evidence	FunctionDef	279	candidate, endpoint	
+code/source_history/assembly/11_eicu_evidence_collection.py	quoted	FunctionDef	18	path	
+code/source_history/assembly/11_eicu_evidence_collection.py	query	FunctionDef	21	sql	
+code/source_history/assembly/11_eicu_evidence_collection.py	parquet	FunctionDef	25	frame, target, temporary	
+code/source_history/assembly/11_eicu_evidence_collection.py	normal_status	FunctionDef	33	series	
+code/source_history/assembly/11_eicu_evidence_collection.py	consensus	FunctionDef	36	series	
+code/source_history/assembly/11_eicu_evidence_collection.py	collect	FunctionDef	40	args	
+code/source_history/assembly/12_eicu_event_classification.py	classify	FunctionDef	23	unit_status, hospital_status, unit_exit, hospital_exit, support_time, core_conflict, horizon, scenario, support_free=True	单病例状态；返回代码、时间（小时）、原因。未知和冲突不当作零事件。
+code/source_history/assembly/12_eicu_event_classification.py	boundary_tests	FunctionDef	64		
+code/source_history/assembly/12_eicu_event_classification.py	logistic	FunctionDef	89	frame, outcome	
+code/source_history/assembly/12_eicu_event_classification.py	run	FunctionDef	143	args	
+code/source_history/assembly/13_strict_frame_assembly_source.py	load	FunctionDef	23	path, name	
+code/source_history/assembly/13_strict_frame_assembly_source.py	sha256	FunctionDef	29	path	
+code/source_history/assembly/13_strict_frame_assembly_source.py	main	FunctionDef	36	args	
+code/source_history/assembly/14_clinical_and_event_assembly.py	load	FunctionDef	18	path, name	
+code/source_history/assembly/14_clinical_and_event_assembly.py	sha	FunctionDef	24	path	
+code/source_history/assembly/14_clinical_and_event_assembly.py	main	FunctionDef	27	args	
+code/source_history/assembly/15_eicu_endpoint_sensitivities.py	load	FunctionDef	18	path, name	
+code/source_history/assembly/15_eicu_endpoint_sensitivities.py	main	FunctionDef	24	args	
+code/source_history/assembly/16_mimic_event_assembly.py	digest	FunctionDef	22	path	
+code/source_history/assembly/16_mimic_event_assembly.py	normalize	FunctionDef	29	frame	
+code/source_history/assembly/16_mimic_event_assembly.py	evidence	FunctionDef	35	frame	
+code/source_history/assembly/16_mimic_event_assembly.py	classify_vector	FunctionDef	49	z, horizon	
+code/source_history/assembly/16_mimic_event_assembly.py	classify_scalar	FunctionDef	57	support, death, discharge, horizon	
+code/source_history/assembly/16_mimic_event_assembly.py	main	FunctionDef	67	args	
+code/source_history/assembly/17_original_pulse_oxygen_reconstruction.py	sqlstr	FunctionDef	17	value	
+code/source_history/assembly/17_original_pulse_oxygen_reconstruction.py	main	FunctionDef	20	project, output, databases	
+code/source_history/assembly/18_current_oxygen_frame_replacement.py	load	FunctionDef	18	path, name	
+code/source_history/assembly/18_current_oxygen_frame_replacement.py	sql	FunctionDef	24	x	
+code/source_history/assembly/18_current_oxygen_frame_replacement.py	sha	FunctionDef	27	p	
+code/source_history/assembly/18_current_oxygen_frame_replacement.py	check	FunctionDef	31	name, ok, detail=''	
+code/source_history/assembly/18b_original_input_loading.py	normalize_database	FunctionDef	35	series: pd.Series	
+code/source_history/assembly/18b_original_input_loading.py	load_analysis_data	FunctionDef	38		
+code/source_history/assembly/18b_original_input_loading.py	variable_availability	FunctionDef	96	frame: pd.DataFrame	
+code/source_history/figure_source/22_current_figure_production.py	tab	FunctionDef	28	n, root=T	
+code/source_history/figure_source/22_current_figure_production.py	Adapt	ClassDef	35		
+code/source_history/figure_source/22_current_figure_production.py	read_csv	FunctionDef	86	path	
+code/source_history/figure_source/23_original_figure_layout_functions.py	configure_style	FunctionDef	42		
+code/source_history/figure_source/23_original_figure_layout_functions.py	read_csv	FunctionDef	45	path: Path	
+code/source_history/figure_source/23_original_figure_layout_functions.py	stamp_png	FunctionDef	48	path: Path	
+code/source_history/figure_source/23_original_figure_layout_functions.py	save_figure	FunctionDef	59	fig: plt.Figure, path: Path	
+code/source_history/figure_source/23_original_figure_layout_functions.py	style_axis	FunctionDef	64	ax: plt.Axes, grid_axis: str='y'	
+code/source_history/figure_source/23_original_figure_layout_functions.py	draw_figure2	FunctionDef	74	summary: pd.DataFrame, totals: dict[str, int]	
+code/source_history/figure_source/23_original_figure_layout_functions.py	model_row	FunctionDef	121	models: pd.DataFrame, database: str, outcome: str, phenotype: str	
+code/source_history/figure_source/23_original_figure_layout_functions.py	absolute_risk_row	FunctionDef	127	risks: pd.DataFrame, database: str, outcome: str, phenotype: str='P3'	
+code/source_history/figure_source/23_original_figure_layout_functions.py	draw_figure3	FunctionDef	133		
+code/source_history/figure_source/23_original_figure_layout_functions.py	draw_figure4	FunctionDef	252		
+code/source_history/historical_model/19_outcome_free_grid.py	log	FunctionDef	30	message: str	
+code/source_history/historical_model/19_outcome_free_grid.py	write_csv	FunctionDef	33	frame: pd.DataFrame, filename: str	
+code/source_history/historical_model/19_outcome_free_grid.py	eligible_mask	FunctionDef	36	frame: pd.DataFrame	
+code/source_history/historical_model/19_outcome_free_grid.py	standardize	FunctionDef	42	raw: np.ndarray	
+code/source_history/historical_model/19_outcome_free_grid.py	observed_log_likelihood	FunctionDef	51	observed_z: np.ndarray, model: GaussianMixture	Component log likelihood using only dimensions observed in each row.
+code/source_history/historical_model/19_outcome_free_grid.py	numerical_diagnostics	FunctionDef	101	model: GaussianMixture	
+code/source_history/historical_model/19_outcome_free_grid.py	metric_row	FunctionDef	131	model: GaussianMixture, observed_z: np.ndarray, filled_z: np.ndarray, fit_seconds: float	
+code/source_history/historical_model/19_outcome_free_grid.py	audit_coverage	FunctionDef	142	matrix: pd.DataFrame	
+code/source_history/historical_model/19_outcome_free_grid.py	save_models	FunctionDef	157	models: dict[tuple[str, int], GaussianMixture]	
+code/source_history/historical_model/19_outcome_free_grid.py	write_manifest	FunctionDef	161		
+code/source_history/historical_model/19_outcome_free_grid.py	main	FunctionDef	170		
+code/source_history/historical_model/20_original_stability_and_mapping.py	log	FunctionDef	35	message: str	
+code/source_history/historical_model/20_original_stability_and_mapping.py	write_csv	FunctionDef	38	frame: pd.DataFrame, filename: str	
+code/source_history/historical_model/20_original_stability_and_mapping.py	eligible_mask	FunctionDef	41	frame: pd.DataFrame, minimum_dimensions: int=32	
+code/source_history/historical_model/20_original_stability_and_mapping.py	standardization	FunctionDef	47	raw: np.ndarray	
+code/source_history/historical_model/20_original_stability_and_mapping.py	observed_log_likelihood	FunctionDef	54	raw: np.ndarray, standardization_means: np.ndarray, standardization_sds: np.ndarray, model: GaussianMixture, feature_indices: np.ndarray | None=None	
+code/source_history/historical_model/20_original_stability_and_mapping.py	assign	FunctionDef	109	raw: np.ndarray, means: np.ndarray, sds: np.ndarray, model: GaussianMixture, feature_indices: np.ndarray | None=None	
+code/source_history/historical_model/20_original_stability_and_mapping.py	align_labels	FunctionDef	114	source: np.ndarray, target: np.ndarray, k: int	
+code/source_history/historical_model/20_original_stability_and_mapping.py	fit_finalist	FunctionDef	119	raw: np.ndarray, covariance_type: str, k: int, n_init: int, seed: int	
+code/source_history/historical_model/20_original_stability_and_mapping.py	one_resample	FunctionDef	126	raw: np.ndarray, full_labels: np.ndarray, covariance_type: str, k: int, iteration: int	
+code/source_history/historical_model/20_original_stability_and_mapping.py	missingness_dependency	FunctionDef	136	discovery: pd.DataFrame, labels: np.ndarray, model_name: str	
+code/source_history/historical_model/20_original_stability_and_mapping.py	high_coverage_sensitivity	FunctionDef	149	discovery: pd.DataFrame, full_labels: np.ndarray, covariance_type: str, k: int	
+code/source_history/historical_model/20_original_stability_and_mapping.py	map_to_old_labels	FunctionDef	159	discovery_meta: pd.DataFrame, new_labels: np.ndarray, k: int	
+code/source_history/historical_model/20_original_stability_and_mapping.py	main	FunctionDef	177		
+code/source_history/historical_model/21_original_k4_finalization.py	load_module	FunctionDef	21		
+code/source_history/historical_model/21_original_k4_finalization.py	write_csv	FunctionDef	28	frame: pd.DataFrame, filename: str	
+code/source_history/historical_model/21_original_k4_finalization.py	main	FunctionDef	31		
+code/source_history/raw/01_pneumonia_identification.py	log	FunctionDef	23	msg	
+code/source_history/raw/01_pneumonia_identification.py	icd9_match	FunctionDef	35	code	
+code/source_history/raw/01_pneumonia_identification.py	icd10_match	FunctionDef	54	code	
+code/source_history/raw/01_pneumonia_identification.py	get_death_days	FunctionDef	138	row	
+code/source_history/raw/01_pneumonia_identification.py	calc_age_iii	FunctionDef	195	row	
+code/source_history/raw/01_pneumonia_identification.py	get_dod_iii	FunctionDef	211	row	
+code/source_history/raw/01_pneumonia_identification.py	keyword_match_pneumonia	FunctionDef	244	text	
+code/source_history/raw/02_mimiciv_legacy_hourly.py	assign_vital	FunctionDef	74	itemid	
+code/source_history/raw/03_mimiciii_legacy_hourly.py	assign_vital_iii	FunctionDef	39	itemid	
+code/source_history/raw/04_eicu_legacy_hourly.py	apply_phys_filter	FunctionDef	24	df, col, vital	
+code/source_history/raw/05_corrected_source_candidate_functions.py	now	FunctionDef	28		
+code/source_history/raw/05_corrected_source_candidate_functions.py	log	FunctionDef	31	msg	
+code/source_history/raw/05_corrected_source_candidate_functions.py	read_scan_csv	FunctionDef	37	name	
+code/source_history/raw/05_corrected_source_candidate_functions.py	write_csv	FunctionDef	41	path, rows, fields	
+code/source_history/raw/05_corrected_source_candidate_functions.py	norm_col	FunctionDef	48	c	
+code/source_history/raw/05_corrected_source_candidate_functions.py	parse_source	FunctionDef	51	path	
+code/source_history/raw/05_corrected_source_candidate_functions.py	open_source	FunctionDef	58	path	
+code/source_history/raw/05_corrected_source_candidate_functions.py	available_columns	FunctionDef	72	path	
+code/source_history/raw/05_corrected_source_candidate_functions.py	read_csv_selected	FunctionDef	84	path, usecols=None, chunksize=None, dtype=str	
+code/source_history/raw/05_corrected_source_candidate_functions.py	read_small	FunctionDef	105	path, usecols=None	
+code/source_history/raw/05_corrected_source_candidate_functions.py	code_norm	FunctionDef	108	x	
+code/source_history/raw/05_corrected_source_candidate_functions.py	is_pneumonia_code	FunctionDef	113	code, version=None	
+code/source_history/raw/05_corrected_source_candidate_functions.py	match_text_terms	FunctionDef	126	text	
+code/source_history/raw/05_corrected_source_candidate_functions.py	summarize_numeric	FunctionDef	130	series	
+code/source_history/raw/05_corrected_source_candidate_functions.py	pct	FunctionDef	136	n, d	
+code/source_history/raw/05_corrected_source_candidate_functions.py	choose_tables	FunctionDef	139	schema_rows	
+code/source_history/raw/05_corrected_source_candidate_functions.py	table_paths_rows	FunctionDef	166	selected	
+code/source_history/raw/05_corrected_source_candidate_functions.py	count_diagnosis_hits	FunctionDef	176	db, diag_path, dict_path=None	
+code/source_history/raw/05_corrected_source_candidate_functions.py	mimic_counts	FunctionDef	266	db, paths	
+code/source_history/raw/05_corrected_source_candidate_functions.py	eicu_counts	FunctionDef	338	paths	
+code/source_history/raw/05_corrected_source_candidate_functions.py	make_code_hit_rows	FunctionDef	369	results	
+code/source_history/raw/05_corrected_source_candidate_functions.py	make_text_hit_rows	FunctionDef	387	results	
+code/source_history/raw/05_corrected_source_candidate_functions.py	make_join_audit	FunctionDef	411	results	
+code/source_history/raw/05_corrected_source_candidate_functions.py	make_mortality_rows	FunctionDef	423	results	
+code/source_history/raw/05_corrected_source_candidate_functions.py	make_summary_rows	FunctionDef	434	results	
+code/source_history/raw/05_corrected_source_candidate_functions.py	make_preview	FunctionDef	445	results	
+code/source_history/raw/05_corrected_source_candidate_functions.py	write_report	FunctionDef	453	results, selected, step_rows, mortality_rows, summary_rows, text_rows	
+code/source_history/raw/05_corrected_source_candidate_functions.py	main	FunctionDef	496		
+code/source_history/raw/06_corrected_hourly_source.py	now	FunctionDef	32		
+code/source_history/raw/06_corrected_hourly_source.py	log	FunctionDef	35	msg	
+code/source_history/raw/06_corrected_hourly_source.py	write_csv	FunctionDef	41	path, rows, fields	
+code/source_history/raw/06_corrected_hourly_source.py	read_required_inputs	FunctionDef	48		
+code/source_history/raw/06_corrected_hourly_source.py	read_scan	FunctionDef	59	name	
+code/source_history/raw/06_corrected_hourly_source.py	source_parts	FunctionDef	63	path	
+code/source_history/raw/06_corrected_hourly_source.py	open_source	FunctionDef	70	path	
+code/source_history/raw/06_corrected_hourly_source.py	available_columns	FunctionDef	82	path	
+code/source_history/raw/06_corrected_hourly_source.py	actual_usecols	FunctionDef	92	path, usecols	
+code/source_history/raw/06_corrected_hourly_source.py	read_csv_chunks	FunctionDef	99	path, usecols=None, chunksize=600000	
+code/source_history/raw/06_corrected_hourly_source.py	read_csv_full	FunctionDef	111	path, usecols=None	
+code/source_history/raw/06_corrected_hourly_source.py	load_prev_module	FunctionDef	123		
+code/source_history/raw/06_corrected_hourly_source.py	rebuild_candidates	FunctionDef	131	schema_rows	
+code/source_history/raw/06_corrected_hourly_source.py	choose_vital_paths	FunctionDef	138	schema_rows	
+code/source_history/raw/06_corrected_hourly_source.py	label_to_var	FunctionDef	154	label	
+code/source_history/raw/06_corrected_hourly_source.py	clean_value	FunctionDef	177	var, value, uom=''	
+code/source_history/raw/06_corrected_hourly_source.py	add_agg	FunctionDef	192	agg, db, stay_id, hour, var, val, source_table, source_item	
+code/source_history/raw/06_corrected_hourly_source.py	scan_mimic_items	FunctionDef	200	db, d_items_path	
+code/source_history/raw/06_corrected_hourly_source.py	scan_mimic_vitals	FunctionDef	214	db, paths, candidates, item_map	
+code/source_history/raw/06_corrected_hourly_source.py	scan_eicu_vitals	FunctionDef	262	paths, candidates	
+code/source_history/raw/06_corrected_hourly_source.py	normalize_candidate_frame	FunctionDef	313	db, final, id_col	
+code/source_history/raw/06_corrected_hourly_source.py	build_hourly_tables	FunctionDef	321	candidates_all, agg	
+code/source_history/raw/06_corrected_hourly_source.py	build_patient_matrix	FunctionDef	357	candidates_all, wide_df	
+code/source_history/raw/06_corrected_hourly_source.py	version_hour_counts	FunctionDef	371	row, spec	
+code/source_history/raw/06_corrected_hourly_source.py	classify_versions	FunctionDef	379	matrix	
+code/source_history/raw/06_corrected_hourly_source.py	make_version_counts	FunctionDef	389	matrix, version_ids	
+code/source_history/raw/06_corrected_hourly_source.py	make_missingness	FunctionDef	405	matrix, version_ids	
+code/source_history/raw/06_corrected_hourly_source.py	make_preview	FunctionDef	427	matrix, version_ids	
+code/source_history/raw/06_corrected_hourly_source.py	write_report	FunctionDef	441	counts, missingness, value_audit, paths_used, item_rows, recommendation	
+code/source_history/raw/06_corrected_hourly_source.py	main	FunctionDef	470		
+code/source_history/raw/06b_original_clinical_extraction.py	has_comorbidity	FunctionDef	139	hadm_ids_per_group, diag_df, icd9_dict, icd10_dict	
+code/source_history/raw/06b_original_clinical_extraction.py	compute_table1	FunctionDef	274	df, group_col=None	Compute descriptive statistics for Table 1
+code/source_history/raw/06c_original_respiratory_auxiliary.py	Logger	ClassDef	42		
+code/source_history/raw/06c_original_respiratory_auxiliary.py	make_stay_key	FunctionDef	86	row	
+code/source_history/raw/06c_original_respiratory_auxiliary.py	read_zip_csv	FunctionDef	118	zip_path, internal_path, **kwargs	Read a csv.gz file from within a zip archive.
+code/source_history/raw/06c_original_respiratory_auxiliary.py	read_zip_csv_chunked	FunctionDef	124	zip_path, internal_path, chunksize=500000, **kwargs	Chunked read of csv.gz from zip.
+code/source_history/raw/06c_original_respiratory_auxiliary.py	clean_fio2	FunctionDef	334	values	"Normalize FiO2 values: convert percentage (21-100) to fraction (0.21-1.0).
+Returns array of same length with NaN for invalid values."
+code/source_history/raw/06c_original_respiratory_auxiliary.py	clean_peep	FunctionDef	345	values	"Clean PEEP values: 0-30 cmH2O, flag >30.
+Returns array of same length with NaN for invalid values."
+code/source_history/raw/06c_original_respiratory_auxiliary.py	agg_time_window	FunctionDef	355	df, stay_col, time_col, value_col, hours_min, hours_max, agg_funcs	Aggregate values within a time window.
+code/source_history/raw/06c_original_respiratory_auxiliary.py	build_fio2_peep_by_stay	FunctionDef	370	df_chart, db_label, stay_col, time_col, fio2_itemids, peep_itemids, vent_itemids_dict, extra_vent_itemids=None	Build stay-level FiO2, PEEP, and ventilation aggregations from chartevents.
+code/source_history/raw/06c_original_respiratory_auxiliary.py	build_lab_by_stay	FunctionDef	465	df_lab, db_label, stay_col, time_col, lab_itemids, col_itemid='itemid', col_valuenum='valuenum'	Aggregate lab values to stay level.
+code/source_history/raw/06c_original_respiratory_auxiliary.py	build_eicu_stay_vars	FunctionDef	524	df_resp, df_respcare, df_lab, df_apache, df_apacheres, cohort_stays	Build eICU stay-level oxygenation/respiratory variables.
+code/source_history/raw/06c_original_respiratory_auxiliary.py	merge_results_dicts	FunctionDef	695	chart_dict, lab_dict	Merge chart and lab result dicts. chart wins on common keys.
+code/source_history/raw/06c_original_respiratory_auxiliary.py	results_to_df	FunctionDef	709	results_dict	
+code/source_history/raw/06c_original_respiratory_auxiliary.py	compute_burden_from_hourly	FunctionDef	723	df, var_prefix, hours=12, thresholds_lt=None, thresholds_gt=None	Compute burden metrics from hourly columns like SpO2_h0..SpO2_h11.
+code/source_history/raw/06c_original_respiratory_auxiliary.py	compute_derived_ratios	FunctionDef	790	df_patient, df_vars	Compute PF ratio, SF ratio, ROX index from merged data.
+code/source_history/raw/06c_original_respiratory_auxiliary.py	build_k5_profile	FunctionDef	957	df, group_cols, agg_dict, filename	Build and save a K5 phenotype profile table. Dtype-robust.
+code/tests_source_history.py	functions	FunctionDef	8	path, names, environment	
+code/tests_source_history.py	main	FunctionDef	21	args	
+code/tests_synthetic.py	main	FunctionDef	28	args	
+code/workflows/01_pneumonia_specificity.py	sha256	FunctionDef	22	path	
+code/workflows/01_pneumonia_specificity.py	main	FunctionDef	30	args	
+code/workflows/03_primary_and_fixed_sensitivities.py	save	FunctionDef	17	kind, rows	
+code/workflows/04_oxygen_affected_associations.py	load	FunctionDef	19	path, name	
+code/workflows/04_oxygen_affected_associations.py	check	FunctionDef	30	name, ok, detail=''	
+code/workflows/04_oxygen_affected_associations.py	effective	FunctionDef	34	f, cov, key	
+code/workflows/04_oxygen_affected_associations.py	audit	FunctionDef	43	f, outcome, key, cov, marker=False	
+code/workflows/04_oxygen_affected_associations.py	replace_file	FunctionDef	67	name, root, mask, new	
+code/workflows/04_oxygen_affected_associations.py	fit	FunctionDef	75	f, outcome, name, cov, seed, marker=False	
+code/workflows/05_fixed_fold_prediction.py	load	FunctionDef	24	path	
+code/workflows/05_fixed_fold_prediction.py	sha	FunctionDef	28	path	
+code/workflows/05_fixed_fold_prediction.py	main	FunctionDef	32	args	
+code/workflows/06_oxygen_coverage.py	load	FunctionDef	18	path, name	
+code/workflows/06_oxygen_coverage.py	check	FunctionDef	29	name, ok, detail=''	
+code/workflows/07_domain_early_posterior.py	load	FunctionDef	27	path, name, no_plot=False	
+code/workflows/07_domain_early_posterior.py	frozen_assets	FunctionDef	31	project	
+code/workflows/07_domain_early_posterior.py	main	FunctionDef	45	args	
+code/workflows/08_time_order.py	load	FunctionDef	25	path, name	
+code/workflows/08_time_order.py	independent_ari	FunctionDef	29	a, b	
+code/workflows/08_time_order.py	main	FunctionDef	38	args	
+code/workflows/09_hospital_transport.py	load	FunctionDef	18	path, name	
+code/workflows/09_hospital_transport.py	main	FunctionDef	22	args	
+code/workflows/10_selection_weighting.py	load	FunctionDef	24	path, name	
+code/workflows/10_selection_weighting.py	main	FunctionDef	28	args	

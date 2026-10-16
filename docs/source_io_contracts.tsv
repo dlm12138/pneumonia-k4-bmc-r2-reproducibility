@@ -1,0 +1,309 @@
+program	source_line	operation	expression	classification
+code/source_history/raw/01_pneumonia_identification.py	140	read_csv	pd.read_csv(MIMICIV_RAW / 'diagnoses_icd.csv.gz')	All patient inputs/outputs private; not distributed
+code/source_history/raw/01_pneumonia_identification.py	145	read_csv	pd.read_csv(MIMICIV_RAW / 'd_icd_diagnoses.csv.gz')	All patient inputs/outputs private; not distributed
+code/source_history/raw/01_pneumonia_identification.py	193	read_csv	pd.read_csv(MIMICIV_RAW / 'icustays.csv.gz')	All patient inputs/outputs private; not distributed
+code/source_history/raw/01_pneumonia_identification.py	199	read_csv	pd.read_csv(MIMICIV_RAW / 'patients.csv.gz')	All patient inputs/outputs private; not distributed
+code/source_history/raw/01_pneumonia_identification.py	200	read_csv	pd.read_csv(MIMICIV_RAW / 'admissions.csv.gz')	All patient inputs/outputs private; not distributed
+code/source_history/raw/01_pneumonia_identification.py	267	to_csv	icu_pneu_iv_first.to_csv(RAW_EXTRACT / 'mimiciv_pneumonia_stays_raw.csv', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/01_pneumonia_identification.py	278	read_csv	pd.read_csv(MIMICIII_RAW / 'DIAGNOSES_ICD.csv.gz')	All patient inputs/outputs private; not distributed
+code/source_history/raw/01_pneumonia_identification.py	282	read_csv	pd.read_csv(MIMICIII_RAW / 'D_ICD_DIAGNOSES.csv.gz')	All patient inputs/outputs private; not distributed
+code/source_history/raw/01_pneumonia_identification.py	306	read_csv	pd.read_csv(MIMICIII_RAW / 'ICUSTAYS.csv.gz')	All patient inputs/outputs private; not distributed
+code/source_history/raw/01_pneumonia_identification.py	307	read_csv	pd.read_csv(MIMICIII_RAW / 'PATIENTS.csv.gz')	All patient inputs/outputs private; not distributed
+code/source_history/raw/01_pneumonia_identification.py	308	read_csv	pd.read_csv(MIMICIII_RAW / 'ADMISSIONS.csv.gz')	All patient inputs/outputs private; not distributed
+code/source_history/raw/01_pneumonia_identification.py	378	to_csv	icu_pneu_iii_first.to_csv(RAW_EXTRACT / 'mimiciii_pneumonia_stays_raw.csv', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/01_pneumonia_identification.py	390	read_csv	pd.read_csv(EICU_DIR / 'patient.csv.gz')	All patient inputs/outputs private; not distributed
+code/source_history/raw/01_pneumonia_identification.py	395	read_csv	pd.read_csv(EICU_DIR / 'diagnosis.csv.gz')	All patient inputs/outputs private; not distributed
+code/source_history/raw/01_pneumonia_identification.py	400	read_csv	pd.read_csv(EICU_DIR / 'admissionDx.csv.gz')	All patient inputs/outputs private; not distributed
+code/source_history/raw/01_pneumonia_identification.py	482	to_csv	eicu_pneu_first.to_csv(RAW_EXTRACT / 'eicu_pneumonia_stays_raw.csv', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/01_pneumonia_identification.py	506	to_csv	audit_df.to_csv(INVENTORY / 'pneumonia_case_definition_terms.csv', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/01_pneumonia_identification.py	521	to_csv	counts_df.to_csv(INVENTORY / 'pneumonia_case_counts_by_database.csv', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/02_mimiciv_legacy_hourly.py	56	read_csv	pd.read_csv(RUN_DIR / '02_raw_extract/mimiciv_pneumonia_stays_raw.csv', usecols=['stay_id', 'intime', 'outtime', 'los_hours'])	All patient inputs/outputs private; not distributed
+code/source_history/raw/02_mimiciv_legacy_hourly.py	185	to_csv	df_wide.to_csv(out_all, index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/02_mimiciv_legacy_hourly.py	200	to_csv	df_complete.to_csv(out_complete, index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/02_mimiciv_legacy_hourly.py	75	open	zf.open(CHARTEVENTS_PATH)	All patient inputs/outputs private; not distributed
+code/source_history/raw/02_mimiciv_legacy_hourly.py	76	open	gzip.open(raw_gz, 'rt', encoding='utf-8')	All patient inputs/outputs private; not distributed
+code/source_history/raw/02_mimiciv_legacy_hourly.py	77	read_csv	pd.read_csv(gz_file, chunksize=CHUNK_SIZE, usecols=['stay_id', 'itemid', 'charttime', 'value', 'valuenum', 'valueuom'], dtype={'stay_id': 'Int64', 'itemid': 'Int64', 'valuenum': 'float64'}, low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/03_mimiciii_legacy_hourly.py	76	read_csv	pd.read_csv(RUN_DIR / '02_raw_extract/mimiciii_pneumonia_stays_raw.csv', usecols=['ICUSTAY_ID', 'INTIME'])	All patient inputs/outputs private; not distributed
+code/source_history/raw/03_mimiciii_legacy_hourly.py	183	to_csv	df_wide.to_csv(out_all, index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/03_mimiciii_legacy_hourly.py	194	to_csv	df_complete.to_csv(out_complete, index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/03_mimiciii_legacy_hourly.py	95	open	zf.open(CHARTEVENTS_PATH)	All patient inputs/outputs private; not distributed
+code/source_history/raw/03_mimiciii_legacy_hourly.py	96	open	gzip.open(raw_gz, 'rt', encoding='utf-8')	All patient inputs/outputs private; not distributed
+code/source_history/raw/03_mimiciii_legacy_hourly.py	97	read_csv	pd.read_csv(gz_file, chunksize=CHUNK_SIZE, usecols=['ICUSTAY_ID', 'ITEMID', 'CHARTTIME', 'VALUE', 'VALUENUM', 'VALUEUOM', 'ERROR'], dtype={'ICUSTAY_ID': 'Int64', 'ITEMID': 'Int64', 'VALUENUM': 'float64', 'ERROR': 'Int64'}, low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/04_eicu_legacy_hourly.py	42	read_csv	pd.read_csv(RUN_DIR / '02_raw_extract/eicu_pneumonia_stays_raw.csv', usecols=['patientunitstayid'])	All patient inputs/outputs private; not distributed
+code/source_history/raw/04_eicu_legacy_hourly.py	49	read_csv	pd.read_csv(EICU_DIR / 'vitalPeriodic.csv.gz', usecols=['patientunitstayid', 'observationoffset', 'heartrate', 'respiration', 'temperature'])	All patient inputs/outputs private; not distributed
+code/source_history/raw/04_eicu_legacy_hourly.py	88	read_csv	pd.read_csv(EICU_DIR / 'vitalAperiodic.csv.gz', usecols=['patientunitstayid', 'observationoffset', 'noninvasivesystolic', 'noninvasivediastolic'])	All patient inputs/outputs private; not distributed
+code/source_history/raw/04_eicu_legacy_hourly.py	227	to_csv	df_wide.to_csv(out_all, index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/04_eicu_legacy_hourly.py	239	to_csv	df_complete.to_csv(out_complete, index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/04_eicu_legacy_hourly.py	246	to_csv	ts_df.to_csv(TABLES / 'Table_S3_temperature_source_mapping.csv', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/04_eicu_legacy_hourly.py	123	read_csv	pd.read_csv(EICU_DIR / 'nurseCharting.csv.gz', usecols=['patientunitstayid', 'nursingchartoffset', 'nursingchartcelltypevalname', 'nursingchartvalue'], chunksize=500000)	All patient inputs/outputs private; not distributed
+code/source_history/raw/05_corrected_source_candidate_functions.py	691	write_text	(OUT / '08_pneumonia_cohort_count_report.md').write_text('\n'.join(report) + '\n', encoding='utf-8')	All patient inputs/outputs private; not distributed
+code/source_history/raw/05_corrected_source_candidate_functions.py	696	write_text	LOG.write_text(f'[{now()}] 开始肺炎 ICU 队列可行性计数\n', encoding='utf-8')	All patient inputs/outputs private; not distributed
+code/source_history/raw/05_corrected_source_candidate_functions.py	45	open	LOG.open('a', encoding='utf-8')	All patient inputs/outputs private; not distributed
+code/source_history/raw/05_corrected_source_candidate_functions.py	50	open	(SCAN / name).open('r', encoding='utf-8-sig', newline='')	All patient inputs/outputs private; not distributed
+code/source_history/raw/05_corrected_source_candidate_functions.py	55	open	path.open('w', encoding='utf-8-sig', newline='')	All patient inputs/outputs private; not distributed
+code/source_history/raw/05_corrected_source_candidate_functions.py	78	open	zf.open(member)	All patient inputs/outputs private; not distributed
+code/source_history/raw/05_corrected_source_candidate_functions.py	80	open	gzip.open(raw, 'rt', encoding='utf-8', errors='replace', newline='')	All patient inputs/outputs private; not distributed
+code/source_history/raw/05_corrected_source_candidate_functions.py	85	open	gzip.open(physical, 'rt', encoding='utf-8', errors='replace', newline='')	All patient inputs/outputs private; not distributed
+code/source_history/raw/05_corrected_source_candidate_functions.py	111	read_csv	pd.read_csv(stream, usecols=actual, dtype=dtype, chunksize=chunksize, low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/05_corrected_source_candidate_functions.py	115	read_csv	pd.read_csv(stream, usecols=actual, dtype=dtype, low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06_corrected_hourly_source.py	754	write_text	(OUT / '08_dataset_recommendation_report.md').write_text('\n'.join(lines) + '\n', encoding='utf-8')	All patient inputs/outputs private; not distributed
+code/source_history/raw/06_corrected_hourly_source.py	759	write_text	LOG.write_text(f'[{now()}] 开始构建 0-12 h 小时级生命体征轨迹数据集\n', encoding='utf-8')	All patient inputs/outputs private; not distributed
+code/source_history/raw/06_corrected_hourly_source.py	876	to_parquet	long_df.to_parquet(OUT / '02_hourly_vitals_long_cleaned.parquet', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06_corrected_hourly_source.py	877	to_parquet	wide_df.to_parquet(OUT / '03_hourly_vitals_wide_cleaned.parquet', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06_corrected_hourly_source.py	878	to_parquet	matrix.to_parquet(OUT / '04_patient_level_trajectory_matrix_all_variables.parquet', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06_corrected_hourly_source.py	881	to_csv	version_ids.to_csv(OUT / '07_dataset_version_patient_ids.csv', index=False, encoding='utf-8-sig')	All patient inputs/outputs private; not distributed
+code/source_history/raw/06_corrected_hourly_source.py	882	to_csv	preview.to_csv(OUT / '09_gbmtm_input_format_preview.csv', index=False, encoding='utf-8-sig')	All patient inputs/outputs private; not distributed
+code/source_history/raw/06_corrected_hourly_source.py	107	open	LOG.open('a', encoding='utf-8')	All patient inputs/outputs private; not distributed
+code/source_history/raw/06_corrected_hourly_source.py	112	open	path.open('w', encoding='utf-8-sig', newline='')	All patient inputs/outputs private; not distributed
+code/source_history/raw/06_corrected_hourly_source.py	136	read_csv	pd.read_csv(path, dtype=str)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06_corrected_hourly_source.py	142	open	(SCAN / name).open(encoding='utf-8-sig', newline='')	All patient inputs/outputs private; not distributed
+code/source_history/raw/06_corrected_hourly_source.py	158	open	zf.open(member)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06_corrected_hourly_source.py	190	read_csv	pd.read_csv(stream, usecols=actual, dtype=str, chunksize=chunksize, low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06_corrected_hourly_source.py	203	read_csv	pd.read_csv(stream, usecols=actual, dtype=str, low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06_corrected_hourly_source.py	163	open	gzip.open(p, 'rt', encoding='utf-8', errors='replace', newline='')	All patient inputs/outputs private; not distributed
+code/source_history/raw/06_corrected_hourly_source.py	160	open	gzip.open(raw, 'rt', encoding='utf-8', errors='replace', newline='')	All patient inputs/outputs private; not distributed
+code/source_history/raw/06b_original_clinical_extraction.py	30	read_csv	pd.read_csv(PROCESSED / 'development_mimiciv_final.csv')	All patient inputs/outputs private; not distributed
+code/source_history/raw/06b_original_clinical_extraction.py	31	read_csv	pd.read_csv(PROCESSED / 'validation_eicu_final.csv')	All patient inputs/outputs private; not distributed
+code/source_history/raw/06b_original_clinical_extraction.py	32	read_csv	pd.read_csv(PROCESSED / 'validation_mimiciii_final.csv')	All patient inputs/outputs private; not distributed
+code/source_history/raw/06b_original_clinical_extraction.py	53	read_csv	pd.read_csv(MIMICIV_RAW / 'd_labitems.csv.gz')	All patient inputs/outputs private; not distributed
+code/source_history/raw/06b_original_clinical_extraction.py	217	read_csv	pd.read_csv(MIMICIV_RAW / 'diagnoses_icd.csv.gz')	All patient inputs/outputs private; not distributed
+code/source_history/raw/06b_original_clinical_extraction.py	428	read_csv	pd.read_csv(MIMICIII_RAW / 'DIAGNOSES_ICD.csv.gz')	All patient inputs/outputs private; not distributed
+code/source_history/raw/06b_original_clinical_extraction.py	460	to_csv	miss_df.to_csv(TABLES / 'Table_S13_missing_rate_by_database.csv', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06b_original_clinical_extraction.py	464	to_csv	iv_final.to_csv(PROCESSED / 'mimiciv_clinical_features.csv', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06b_original_clinical_extraction.py	465	to_csv	eicu_final.to_csv(PROCESSED / 'eicu_clinical_features.csv', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06b_original_clinical_extraction.py	466	to_csv	iii_final.to_csv(PROCESSED / 'mimiciii_clinical_features.csv', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06b_original_clinical_extraction.py	542	to_csv	table_s11.to_csv(TABLES / 'Table_S11_validation_eicu_baseline.csv', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06b_original_clinical_extraction.py	544	to_csv	table_s12.to_csv(TABLES / 'Table_S12_validation_mimiciii_baseline.csv', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06b_original_clinical_extraction.py	38	read_csv	pd.read_csv(pheno_file)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06b_original_clinical_extraction.py	349	read_csv	pd.read_csv(EICU_DIR / 'apacheApsVar.csv.gz')	All patient inputs/outputs private; not distributed
+code/source_history/raw/06b_original_clinical_extraction.py	374	read_csv	pd.read_csv(EICU_DIR / 'lab.csv.gz', chunksize=500000)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06b_original_clinical_extraction.py	532	to_csv	table1.to_csv(TABLES / 'Table_1_development_baseline.csv', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06b_original_clinical_extraction.py	537	to_csv	table1.to_csv(TABLES / 'Table_1_development_baseline.csv', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06b_original_clinical_extraction.py	131	open	zf.open(LABEVENTS_PATH)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06b_original_clinical_extraction.py	190	open	zf.open('mimic-iv-3.1/icu/chartevents.csv.gz')	All patient inputs/outputs private; not distributed
+code/source_history/raw/06b_original_clinical_extraction.py	132	open	gzip.open(raw_gz, 'rt')	All patient inputs/outputs private; not distributed
+code/source_history/raw/06b_original_clinical_extraction.py	133	read_csv	pd.read_csv(gz_file, chunksize=500000, usecols=['hadm_id', 'itemid', 'charttime', 'valuenum'], dtype={'hadm_id': 'Int64', 'itemid': 'Int64', 'valuenum': 'float64'}, low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06b_original_clinical_extraction.py	191	open	gzip.open(raw_gz, 'rt')	All patient inputs/outputs private; not distributed
+code/source_history/raw/06b_original_clinical_extraction.py	192	read_csv	pd.read_csv(gz_file, chunksize=500000, usecols=['stay_id', 'itemid', 'charttime', 'valuenum'], dtype={'stay_id': 'Int64', 'itemid': 'Int64', 'valuenum': 'float64'}, low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06b_original_clinical_extraction.py	282	open	zf.open(PROCEVENTS_PATH)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06b_original_clinical_extraction.py	319	open	zf.open(vaso_path)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06b_original_clinical_extraction.py	283	open	gzip.open(raw_gz, 'rt')	All patient inputs/outputs private; not distributed
+code/source_history/raw/06b_original_clinical_extraction.py	284	read_csv	pd.read_csv(gz_file, chunksize=200000, usecols=['stay_id', 'itemid', 'starttime'], dtype={'stay_id': 'Int64', 'itemid': 'Int64'}, low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06b_original_clinical_extraction.py	320	open	gzip.open(raw_gz, 'rt')	All patient inputs/outputs private; not distributed
+code/source_history/raw/06b_original_clinical_extraction.py	321	read_csv	pd.read_csv(gz_file, chunksize=200000, usecols=['stay_id', 'itemid', 'starttime'], dtype={'stay_id': 'Int64', 'itemid': 'Int64'}, low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06c_original_respiratory_auxiliary.py	91	read_parquet	pd.read_parquet(PATIENT_PARQUET_07A)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06c_original_respiratory_auxiliary.py	108	read_parquet	pd.read_parquet(VITALS_WIDE_03B)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06c_original_respiratory_auxiliary.py	482	read_csv	pd.read_csv(EICU_DIR / 'respiratoryCharting.csv.gz', usecols=['patientunitstayid', 'respchartoffset', 'respchartvaluelabel', 'respchartvalue'])	All patient inputs/outputs private; not distributed
+code/source_history/raw/06c_original_respiratory_auxiliary.py	490	read_csv	pd.read_csv(EICU_DIR / 'respiratoryCare.csv.gz', usecols=['patientunitstayid', 'respcarestatusoffset', 'airwaytype', 'ventstartoffset', 'ventendoffset', 'setapneafio2', 'peeplimit'])	All patient inputs/outputs private; not distributed
+code/source_history/raw/06c_original_respiratory_auxiliary.py	499	read_csv	pd.read_csv(EICU_DIR / 'lab.csv.gz', usecols=['patientunitstayid', 'labresultoffset', 'labname', 'labresult'])	All patient inputs/outputs private; not distributed
+code/source_history/raw/06c_original_respiratory_auxiliary.py	507	read_csv	pd.read_csv(EICU_DIR / 'apacheApsVar.csv.gz', usecols=['patientunitstayid', 'intubated', 'vent', 'fio2', 'pao2', 'pco2', 'ph', 'temperature', 'respiratoryrate', 'heartrate', 'meanbp', 'wbc', 'creatinine', 'bun', 'bilirubin', 'sodium', 'glucose', 'hematocrit', 'albumin', 'urine', 'dialysis', 'eyes', 'motor', 'verbal', 'meds'])	All patient inputs/outputs private; not distributed
+code/source_history/raw/06c_original_respiratory_auxiliary.py	518	read_csv	pd.read_csv(EICU_DIR / 'apachePatientResult.csv.gz', usecols=['patientunitstayid', 'acutephysiologyscore', 'apachescore', 'apacheversion', 'actualventdays'])	All patient inputs/outputs private; not distributed
+code/source_history/raw/06c_original_respiratory_auxiliary.py	1312	to_parquet	df_final.to_parquet(CKPT, index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06c_original_respiratory_auxiliary.py	1332	to_csv	pd.DataFrame(input_files).to_csv(OUT / '01_input_file_check.csv', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06c_original_respiratory_auxiliary.py	1363	to_csv	pd.DataFrame(inventory_rows).to_csv(OUT / '02_database_table_and_field_inventory_used.csv', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06c_original_respiratory_auxiliary.py	1377	to_csv	pd.DataFrame(fio2_candidates).to_csv(OUT / '03_fio2_peep_pao2_itemid_field_candidates.csv', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06c_original_respiratory_auxiliary.py	1386	to_csv	pd.DataFrame(vent_candidates).to_csv(OUT / '04_ventilation_itemid_field_candidates.csv', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06c_original_respiratory_auxiliary.py	1399	to_csv	pd.DataFrame(lab_candidates).to_csv(OUT / '05_lactate_severity_itemid_field_candidates.csv', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06c_original_respiratory_auxiliary.py	1403	to_parquet	df_final.to_parquet(OUT / '06_patient_level_oxygenation_respiratory_severity_dataset.parquet', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06c_original_respiratory_auxiliary.py	1409	to_csv	df_final[preview_cols[:50]].head(100).to_csv(OUT / '07_patient_level_oxygenation_respiratory_severity_preview.csv', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06c_original_respiratory_auxiliary.py	1426	to_csv	pd.DataFrame(availability_rows).to_csv(OUT / '08_variable_availability_by_database.csv', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06c_original_respiratory_auxiliary.py	1439	to_csv	pd.DataFrame(missingness_rows).to_csv(OUT / '09_variable_missingness_by_database.csv', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06c_original_respiratory_auxiliary.py	1453	to_csv	pd.DataFrame(pheno_miss_rows).to_csv(OUT / '10_variable_missingness_by_k5_phenotype.csv', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06c_original_respiratory_auxiliary.py	1572	to_csv	pd.DataFrame(unavail).to_csv(OUT / '16_unavailable_or_unreliable_variables.csv', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06c_original_respiratory_auxiliary.py	241	read_parquet	pd.read_parquet(resume_path)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06c_original_respiratory_auxiliary.py	1490	to_csv	df_profile.to_csv(OUT / filename, index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06c_original_respiratory_auxiliary.py	1553	to_csv	pd.DataFrame(profiles_k4).to_csv(OUT / '15_k4_sensitivity_oxygenation_respiratory_profile.csv', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06c_original_respiratory_auxiliary.py	225	open	zf.open(internal_path)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06c_original_respiratory_auxiliary.py	226	read_csv	pd.read_csv(f, compression='gzip', **kwargs)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06c_original_respiratory_auxiliary.py	231	open	zf.open(internal_path)	All patient inputs/outputs private; not distributed
+code/source_history/raw/06c_original_respiratory_auxiliary.py	232	read_csv	pd.read_csv(f, compression='gzip', chunksize=chunksize, **kwargs)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/07_landmark_source_functions.py	1	read_csv	pd.read_csv(os.environ['CLEANING_SCHEMA'], usecols=['vital', 'valid_min', 'valid_max'])	All patient inputs/outputs private; not distributed
+code/source_history/assembly/07_landmark_source_functions.py	31	read_parquet	pd.read_parquet(SOURCE_0529 / '03_hourly_vitals_wide_cleaned.parquet')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/07_landmark_source_functions.py	61	read_csv	pd.read_csv(RAW / 'mimiciv_pneumonia_stays_raw.csv', low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/07_landmark_source_functions.py	75	read_csv	pd.read_csv(RAW / 'mimiciii_pneumonia_stays_raw.csv', low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/07_landmark_source_functions.py	89	read_csv	pd.read_csv(RAW / 'eicu_pneumonia_stays_raw.csv', low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/07_landmark_source_functions.py	39	read_csv	pd.read_csv(SOURCE_0517 / filename, low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/08_candidate_attribute_source.py	47	read_parquet	pd.read_parquet(CANDIDATE_PATH)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/08_candidate_attribute_source.py	48	read_parquet	pd.read_parquet(ASSIGNMENT_PATH)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/08_candidate_attribute_source.py	49	read_parquet	pd.read_parquet(ENDPOINT_PATH)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/08_candidate_attribute_source.py	51	open	MODEL_PATH.open('rb')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/09_organ_support_endpoints.py	130	to_csv	frame.to_csv(ROOT / filename, index=False, encoding='utf-8-sig')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/09_organ_support_endpoints.py	147	read_csv	pd.read_csv(path, usecols=usecols, chunksize=chunksize, low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/09_organ_support_endpoints.py	299	read_csv	pd.read_csv(STAY_ROOT / 'mimiciv_pneumonia_stays_raw.csv', usecols=['stay_id', 'subject_id', 'hadm_id', 'intime', 'outtime', 'deathtime'], low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/09_organ_support_endpoints.py	467	read_csv	pd.read_csv(STAY_ROOT / 'mimiciii_pneumonia_stays_raw.csv', usecols=['SUBJECT_ID', 'HADM_ID', 'ICUSTAY_ID', 'DBSOURCE', 'INTIME', 'OUTTIME', 'DEATHTIME'], low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/09_organ_support_endpoints.py	657	read_csv	pd.read_csv(EICU / 'patient.csv.gz', usecols=['patientunitstayid', 'hospitalid', 'unitdischargeoffset', 'unitdischargestatus', 'hospitaldischargeoffset', 'hospitaldischargestatus'], low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/09_organ_support_endpoints.py	927	read_parquet	pd.read_parquet(ASSIGNMENTS)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/09_organ_support_endpoints.py	936	to_parquet	endpoints.to_parquet(ROOT / '13_organ_support_escalation_patient_level.parquet', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/10_diagnosis_recovery_functions.py	44	read_csv	pd.read_csv(io.StringIO(p.stdout), low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/10_diagnosis_recovery_functions.py	50	to_csv	frame.to_csv(TABLE / (name + '.tsv'), sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/10_diagnosis_recovery_functions.py	55	to_csv	frame.to_csv(staging, sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/10_diagnosis_recovery_functions.py	278	read_csv	pd.read_csv(RAW_EXTRACT / 'eicu_pneumonia_stays_raw.csv', low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/10_diagnosis_recovery_functions.py	131	read_csv	pd.read_csv(RAW_EXTRACT / fn, low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/10_diagnosis_recovery_functions.py	202	read_csv	pd.read_csv(CLIN / (prefix + '_clinical_features.csv'), usecols=['stay_id'] + COMORB, low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/10_diagnosis_recovery_functions.py	209	read_csv	pd.read_csv(RAW_EXTRACT / (prefix + '_pneumonia_stays_raw.csv'), low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/10_diagnosis_recovery_functions.py	213	read_csv	pd.read_csv(rawfile, usecols=use, dtype={codecol: 'string'}, chunksize=400000, low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/10_diagnosis_recovery_functions.py	284	read_csv	pd.read_csv(EU / filename, chunksize=250000, low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/10_diagnosis_recovery_functions.py	170	read_text	path.read_text()	All patient inputs/outputs private; not distributed
+code/source_history/assembly/10_diagnosis_recovery_functions.py	139	read_csv	pd.read_csv(EU / 'patient.csv.gz', usecols=['patientunitstayid', 'age', 'unitdischargeoffset'], low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/10_diagnosis_recovery_functions.py	150	read_csv	pd.read_csv(III / 'PATIENTS.csv.gz', usecols=['SUBJECT_ID', 'DOB'])	All patient inputs/outputs private; not distributed
+code/source_history/assembly/11_eicu_evidence_collection.py	21	read_csv	pd.read_csv(io.StringIO(result.stdout), low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/11_eicu_evidence_collection.py	26	to_csv	frame.to_csv(staging, sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/11_eicu_evidence_collection.py	63	to_csv	pd.DataFrame(hashes).to_csv(table / '00_只读输入校验值.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/11_eicu_evidence_collection.py	72	read_csv	pd.read_csv(raw / 'patient.csv.gz', usecols=cols, low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/11_eicu_evidence_collection.py	90	read_csv	pd.read_csv(raw / 'apachePatientResult.csv.gz', usecols=['patientunitstayid', 'apacheversion', 'actualicumortality', 'actualhospitalmortality', 'unabridgedunitlos', 'unabridgedhosplos'], low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/11_eicu_evidence_collection.py	142	read_csv	pd.read_csv(old_fg)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/11_eicu_evidence_collection.py	157	to_csv	membership.to_csv(table / '01_冲突集合互斥分解.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/11_eicu_evidence_collection.py	161	to_csv	pd.DataFrame(intersections).to_csv(table / '01_冲突集合交集及并集.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/11_eicu_evidence_collection.py	184	to_csv	pd.DataFrame(summaries).to_csv(table / '02_逐项来源核查汇总.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/11_eicu_evidence_collection.py	185	to_csv	f.groupby(['any_target_set', 'unit_status', 'hospital_status', 'apache_unit', 'apache_hospital'], dropna=False).agg(N=('stay_id', 'size')).reset_index().to_csv(table / '02_APACHE与原表状态交叉.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/11_eicu_evidence_collection.py	187	to_csv	f.groupby(['any_target_set', 'evidence_grade']).agg(N=('stay_id', 'size')).reset_index().to_csv(table / '02_证据等级.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/11_eicu_evidence_collection.py	193	to_csv	pd.DataFrame([dict(population='landmark', old_N=len(c), strict_N=int(c.unitdischargeoffset.gt(720).sum())), dict(population='assigned', old_N=len(f), strict_N=int(f.strict_landmark.sum()))]).to_csv(table / '03_严格边界分母.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/11_eicu_evidence_collection.py	60	open	path.open('rb')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/12_eicu_event_classification.py	140	to_csv	tests.to_csv(table / '04_边界单元测试.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/12_eicu_event_classification.py	141	read_csv	pd.read_csv(project / 'revision_R1_R2_data/20_competing_risk_input.csv')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/12_eicu_event_classification.py	172	read_csv	pd.read_csv(project / '10_second_round_revision_20261014/data_audit/tables/01_frozen_primary_reproduction.tsv', sep='\t')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/12_eicu_event_classification.py	185	to_csv	pd.DataFrame(model_rows).to_csv(table / '定向重算结果.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/12_eicu_event_classification.py	186	to_csv	pd.DataFrame(counts).to_csv(table / '新旧人数和事件对账.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/12_eicu_event_classification.py	198	to_csv	pd.DataFrame(selection).to_csv(table / '05_排除及佐证缺失选择影响.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/12_eicu_event_classification.py	230	to_csv	pd.DataFrame(summaries).to_csv(table / '06_竞争风险事件及未知状态.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/12_eicu_event_classification.py	234	to_csv	pd.DataFrame([dict(rules_sha256=rule_hash, models_N=len(model_rows), event_scenarios_N=len(summaries), boundary_tests_N=len(tests))]).to_csv(table / '04_规则锁定及运行检查点.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/12_eicu_event_classification.py	233	open	(out / '事件判定与定向分析规则.md').open('rb')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	44	read_parquet	pd.read_parquet(membershippath)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	47	read_csv	pd.read_csv(project / '10_second_round_revision_20261014/data_audit/tables/01_frozen_parameter_source_hashes.tsv', sep='\t')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	96	read_csv	pd.read_csv(modelroot / 'component_means.csv')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	103	read_parquet	pd.read_parquet(severity.CANDIDATES)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	116	to_parquet	checked.to_parquet(private / '修订保留者冻结后验概率.parquet', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	122	read_csv	pd.read_csv(correction / 'outputs/11_incremental_performance_predictions.csv', dtype={'stay_id': str, 'patient_id': str})	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	202	read_parquet	pd.read_parquet(project / '10_second_round_revision_20261014/data_audit/private/03_comorbidity_source_recovery.parquet')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	206	to_parquet	revised.to_parquet(private / '修订三库全模块分析输入.parquet', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	286	to_csv	pd.DataFrame(protected_rows).to_csv(tables / '02_主要分析只读保护.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	291	write_text	(out / '主效应检查点.json').write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding='utf-8')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	29	open	path.open('rb')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	54	read_csv	pd.read_csv(qpath, sep='\t')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	68	read_csv	pd.read_csv(path, sep='\t')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	86	to_csv	pd.DataFrame(qc).to_csv(tables / '02_主效应与严重度独立核查.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	187	to_csv	pd.DataFrame(diagnostic).to_csv(tables / '02_回归数值与稀疏性诊断.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	188	to_parquet	pd.concat(designs, ignore_index=True).to_parquet(private / '修订回归独立核查矩阵.parquet', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	283	to_csv	pd.concat(sensitivity_rows).to_csv(tables / '07_修订肺炎时点与吸入编码敏感性.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	59	read_parquet	pd.read_parquet(designpath)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	95	read_csv	pd.read_csv(modelroot / 'component_weights.csv')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	127	read_csv	pd.read_csv(project / '10_second_round_revision_20261014/data_audit/tables/01_frozen_primary_reproduction.tsv', sep='\t')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	156	to_csv	pd.DataFrame(separated).to_csv(tables / '02_准完全分离与不可正式估计模型.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	163	to_csv	pd.DataFrame(diagnostic).to_csv(diagpath, sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	238	to_csv	pd.concat(result_rows).to_csv(tables / '02_修订主要效应与严重度.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	254	to_csv	pd.concat(hrrr_rows).to_csv(tables / '03_修订固定HRRR规则.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	260	to_csv	pd.concat(hospital_rows).to_csv(tables / '04_修订整个住院死亡.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	61	read_csv	pd.read_csv(diagpath, sep='\t')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	267	to_csv	pd.concat(apache_rows).to_csv(tables / '05_修订APACHE同样本敏感性.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	279	to_csv	pd.concat(comorb_rows).to_csv(tables / '06_修订共病同样本敏感性.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	94	read_csv	pd.read_csv(modelroot / 'standardization_parameters.csv')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	92	read_csv	pd.read_csv(modelroot / 'feature_order.csv')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/13_strict_frame_assembly_source.py	100	read_csv	pd.read_csv(modelroot / f'covariance_{p}.csv', index_col=0)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/14_clinical_and_event_assembly.py	28	read_parquet	pd.read_parquet(private / '三库修订肺炎资格与纳入标记.parquet')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/14_clinical_and_event_assembly.py	29	read_parquet	pd.read_parquet(private / '修订三库全模块分析输入.parquet')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/14_clinical_and_event_assembly.py	31	read_parquet	pd.read_parquet(recoverypath)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/14_clinical_and_event_assembly.py	58	to_csv	pd.DataFrame(selection).to_csv(table / '09_修订共病来源选择与死亡流失.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/14_clinical_and_event_assembly.py	73	to_csv	clinical.stress_profile(source).to_csv(table / '10_修订P3与P2临床描述.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/14_clinical_and_event_assembly.py	85	to_csv	pd.DataFrame(timing).to_csv(table / '11_修订明确肺炎记录时点.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/14_clinical_and_event_assembly.py	95	to_parquet	evidence.to_parquet(private / '修订eICU逐人原始结局证据.parquet', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/14_clinical_and_event_assembly.py	96	to_parquet	events.to_parquet(private / '修订eICU竞争风险逐人事件.parquet', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/14_clinical_and_event_assembly.py	98	to_csv	statuses.to_csv(table / '12_修订竞争风险分类对账.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/14_clinical_and_event_assembly.py	104	to_csv	pd.DataFrame(conflict_rows).to_csv(table / '12_修订结局冲突与选择.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/14_clinical_and_event_assembly.py	106	to_csv	protected.to_csv(table / '09_临床与事件输入只读保护.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/14_clinical_and_event_assembly.py	109	write_text	(out / '临床与事件输入检查点.json').write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding='utf-8')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/14_clinical_and_event_assembly.py	39	to_csv	pd.DataFrame(qc).to_csv(table / '09_临床选择和事件输入独立核查.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/14_clinical_and_event_assembly.py	69	to_csv	results.to_csv(table / ('10_' + db + '_修订四型临床表征.tsv'), sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/14_clinical_and_event_assembly.py	89	read_parquet	pd.read_parquet(epath)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/14_clinical_and_event_assembly.py	89	read_parquet	pd.read_parquet(vpath)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/15_eicu_endpoint_sensitivities.py	26	read_parquet	pd.read_parquet(private / '修订eICU逐人原始结局证据.parquet')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/15_eicu_endpoint_sensitivities.py	27	read_parquet	pd.read_parquet(private / '修订三库全模块分析输入.parquet')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/15_eicu_endpoint_sensitivities.py	76	to_csv	tests.to_csv(tables / '14_事件边界测试.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/15_eicu_endpoint_sensitivities.py	87	read_parquet	pd.read_parquet(private / '修订eICU竞争风险逐人事件.parquet')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/15_eicu_endpoint_sensitivities.py	88	read_csv	pd.read_csv(tables / '13_修订FineGray实际重拟合.tsv', sep='\t')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/15_eicu_endpoint_sensitivities.py	106	write_text	(out / '结局敏感性检查点.json').write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding='utf-8')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/15_eicu_endpoint_sensitivities.py	55	to_csv	pd.DataFrame(qc).to_csv(tables / '14_事件敏感性独立核查.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/15_eicu_endpoint_sensitivities.py	85	to_csv	pd.concat(rows).to_csv(tables / '14_修订结局语义敏感性.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/15_eicu_endpoint_sensitivities.py	102	to_csv	pd.concat(aligned).to_csv(tables / '14_修订同范围复合普通回归.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/16_mimic_event_assembly.py	164	to_csv	pd.DataFrame(counts).to_csv(tables / '03_新旧样本及结局定义差异.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/16_mimic_event_assembly.py	165	to_csv	pd.DataFrame(phenotypecounts).to_csv(tables / '04_各组人数与事件.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/16_mimic_event_assembly.py	169	to_parquet	events[eventcols].to_parquet(private / 'MIMIC修订逐人复合与竞争事件.parquet', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/16_mimic_event_assembly.py	242	to_csv	pd.DataFrame(protection).to_csv(protectionpath, sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/16_mimic_event_assembly.py	23	open	path.open('rb')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/16_mimic_event_assembly.py	89	to_csv	pd.DataFrame([dict(path=p, SHA256_before=h) for p, h in hashes.items()]).to_csv(protectionpath, sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/16_mimic_event_assembly.py	94	to_csv	pd.DataFrame(checks).to_csv(tables / '02_Python事件与数值独立检查.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/16_mimic_event_assembly.py	98	read_parquet	pd.read_parquet(history)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/16_mimic_event_assembly.py	100	read_parquet	pd.read_parquet(sourcepath)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/16_mimic_event_assembly.py	124	read_csv	pd.read_csv(oldfgpath, dtype={'stay_id': str})	All patient inputs/outputs private; not distributed
+code/source_history/assembly/16_mimic_event_assembly.py	179	read_csv	pd.read_csv(resultpath, sep='\t')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/16_mimic_event_assembly.py	180	read_csv	pd.read_csv(detailpath, sep='\t')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/16_mimic_event_assembly.py	182	read_parquet	pd.read_parquet(designpath)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/16_mimic_event_assembly.py	230	to_csv	pd.concat(results, ignore_index=True).to_csv(resultpath, sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/16_mimic_event_assembly.py	231	to_csv	pd.concat(details, ignore_index=True).to_csv(detailpath, sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/16_mimic_event_assembly.py	232	to_csv	pd.DataFrame(diagnostics).to_csv(diagpath, sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/16_mimic_event_assembly.py	233	to_parquet	pd.concat(designs, ignore_index=True).to_parquet(designpath, index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/16_mimic_event_assembly.py	234	write_text	(out / '计算检查点.json').write_text(json.dumps({'普通模型已完成': pd.concat(results).model_key.unique().tolist(), '每模型成功重抽样次数': 500, 'R独立核验和FineGray': '尚待执行', '稿件修改': False}, ensure_ascii=False, indent=2), encoding='utf-8')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/16_mimic_event_assembly.py	181	read_csv	pd.read_csv(diagpath, sep='\t')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/16_mimic_event_assembly.py	86	read_csv	pd.read_csv(protectionpath, sep='\t')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/17_original_pulse_oxygen_reconstruction.py	24	read_parquet	pd.read_parquet(project / '14_pneumonia_specificity_revision_20261014/private/修订三库全模块分析输入.parquet', columns=['database', 'stay_id', 'SpO2_min_0_12h', 'phenotype', 'death_24h'])	All patient inputs/outputs private; not distributed
+code/source_history/assembly/17_original_pulse_oxygen_reconstruction.py	46	to_csv	pd.DataFrame(mapping_rows).to_csv(output / 'tables/10_原小时血氧字段与外周血氧字段对照.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/17_original_pulse_oxygen_reconstruction.py	39	read_csv	pd.read_csv(locations[db] / ('d_items.csv.gz' if db == 'MIMIC-IV' else 'D_ITEMS.csv.gz'))	All patient inputs/outputs private; not distributed
+code/source_history/assembly/17_original_pulse_oxygen_reconstruction.py	51	to_parquet	g[['stay_id']].to_parquet(keys, index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/17_original_pulse_oxygen_reconstruction.py	104	read_parquet	pd.read_parquet(hourly)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/17_original_pulse_oxygen_reconstruction.py	118	to_parquet	z.to_parquet(private / (db + '_oxygen_source_comparison.parquet'), index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/17_original_pulse_oxygen_reconstruction.py	131	to_csv	pd.DataFrame(out).to_csv(output / 'tables' / ('11_' + db + '_血氧原始来源定向复核.tsv'), sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/17_original_pulse_oxygen_reconstruction.py	98	write_text	(output / 'qc' / (db + '_oxygen_scan.log')).write_text(result.stdout + '\n' + result.stderr)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/17_original_pulse_oxygen_reconstruction.py	102	read_parquet	pd.read_parquet(pending, columns=['stay_id', 'hour_index'])	All patient inputs/outputs private; not distributed
+code/source_history/assembly/18_current_oxygen_frame_replacement.py	23	read_parquet	pd.read_parquet(R / 'private/修订三库全模块分析输入.parquet')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/18_current_oxygen_frame_replacement.py	24	read_parquet	pd.read_parquet(R / 'private/三库修订肺炎资格与纳入标记.parquet')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/18_current_oxygen_frame_replacement.py	26	read_parquet	pd.read_parquet(cp)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/18_current_oxygen_frame_replacement.py	33	to_parquet	c.to_parquet(O / 'private/24维以上严格肺炎候选_原特征结局不变.parquet', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/18_current_oxygen_frame_replacement.py	75	to_parquet	hourly.to_parquet(O / 'private/外周血氧每小时均值_所有所需覆盖阈值.parquet', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/18_current_oxygen_frame_replacement.py	84	read_parquet	pd.read_parquet(A / 'private/仅当前应用队列_已纠正外周血氧替换列_未重算下游.parquet')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/18_current_oxygen_frame_replacement.py	92	to_parquet	updated.to_parquet(O / 'private/修订三库全模块分析输入.parquet', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/18_current_oxygen_frame_replacement.py	93	to_parquet	new.to_parquet(O / 'private/纠正外周血氧汇总_覆盖所有所需阈值.parquet', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/18_current_oxygen_frame_replacement.py	94	to_csv	pd.DataFrame(counts).to_csv(O / 'tables/01_低覆盖新增患者血氧补取.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/18_current_oxygen_frame_replacement.py	102	to_csv	pd.DataFrame(availability).to_csv(O / 'tables/01_血氧可用性新旧对照.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/18_current_oxygen_frame_replacement.py	103	write_text	(O / '血氧替换检查点.json').write_text(json.dumps(dict(status='血氧整体替换和低阈值新增提取完成', checks=len(checks), fail=0), ensure_ascii=False, indent=2))	All patient inputs/outputs private; not distributed
+code/source_history/assembly/18_current_oxygen_frame_replacement.py	16	to_csv	pd.DataFrame(checks).to_csv(O / 'qc/01_血氧替换与不变性核对.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/18_current_oxygen_frame_replacement.py	22	to_csv	pd.DataFrame([dict(path=str(p), sha256=sha(p)) for p in protected if p.is_file()]).to_csv(hp, sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/18_current_oxygen_frame_replacement.py	39	to_parquet	pd.DataFrame({'stay_id': sorted(added)}).to_parquet(kp, index=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/18_current_oxygen_frame_replacement.py	60	read_parquet	pd.read_parquet(A / 'private' / (db + '_raw_oxygen_by_hour_item.parquet'))	All patient inputs/outputs private; not distributed
+code/source_history/assembly/18_current_oxygen_frame_replacement.py	57	write_text	(O / 'qc' / (db + '_新增血氧扫描.log')).write_text(z.stdout + '\n' + z.stderr)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/18_current_oxygen_frame_replacement.py	63	read_parquet	pd.read_parquet(hpnew)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/18_current_oxygen_frame_replacement.py	59	read_parquet	pd.read_parquet(pend, columns=['stay_id'])	All patient inputs/outputs private; not distributed
+code/source_history/assembly/18_current_oxygen_frame_replacement.py	27	read_csv	pd.read_csv(P / 'revision_R1_R2_data/locked_K4_model/feature_order.csv')	All patient inputs/outputs private; not distributed
+code/source_history/assembly/18b_original_input_loading.py	32	read_parquet	pd.read_parquet(ENDPOINT)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/18b_original_input_loading.py	35	read_parquet	pd.read_parquet(CANDIDATES)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/18b_original_input_loading.py	42	read_parquet	pd.read_parquet(RESPIRATORY)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/18b_original_input_loading.py	72	read_csv	pd.read_csv(APACHE, usecols=['patientunitstayid', 'acutephysiologyscore', 'apachescore', 'apacheversion'], low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/assembly/18b_original_input_loading.py	55	read_csv	pd.read_csv(path, low_memory=False)	All patient inputs/outputs private; not distributed
+code/source_history/historical_model/19_outcome_free_grid.py	48	to_csv	frame.to_csv(ROOT / filename, index=False, encoding='utf-8-sig')	All patient inputs/outputs private; not distributed
+code/source_history/historical_model/19_outcome_free_grid.py	318	read_parquet	pd.read_parquet(INPUT)	All patient inputs/outputs private; not distributed
+code/source_history/historical_model/19_outcome_free_grid.py	431	to_csv	grid.to_csv(metrics_path, index=False, encoding='utf-8-sig')	All patient inputs/outputs private; not distributed
+code/source_history/historical_model/19_outcome_free_grid.py	296	open	(ROOT / '01_common4_screening_models.pkl').open('wb')	All patient inputs/outputs private; not distributed
+code/source_history/historical_model/19_outcome_free_grid.py	399	to_csv	pd.DataFrame(rows).sort_values(['covariance_type', 'K']).to_csv(metrics_path, index=False, encoding='utf-8-sig')	All patient inputs/outputs private; not distributed
+code/source_history/historical_model/19_outcome_free_grid.py	344	open	model_path.open('rb')	All patient inputs/outputs private; not distributed
+code/source_history/historical_model/19_outcome_free_grid.py	349	read_csv	pd.read_csv(metrics_path)	All patient inputs/outputs private; not distributed
+code/source_history/historical_model/20_original_stability_and_mapping.py	59	to_csv	frame.to_csv(ROOT / filename, index=False, encoding='utf-8-sig')	All patient inputs/outputs private; not distributed
+code/source_history/historical_model/20_original_stability_and_mapping.py	402	read_parquet	pd.read_parquet(OLD_FIVE)	All patient inputs/outputs private; not distributed
+code/source_history/historical_model/20_original_stability_and_mapping.py	496	read_parquet	pd.read_parquet(INPUT)	All patient inputs/outputs private; not distributed
+code/source_history/historical_model/20_original_stability_and_mapping.py	501	read_csv	pd.read_csv(ROOT / '01_common4_model_grid.csv')	All patient inputs/outputs private; not distributed
+code/source_history/historical_model/20_original_stability_and_mapping.py	717	to_parquet	assignments.to_parquet(ROOT / '07_common4_selected_assignments.parquet', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/historical_model/20_original_stability_and_mapping.py	516	read_csv	pd.read_csv(resampling_path)	All patient inputs/outputs private; not distributed
+code/source_history/historical_model/20_original_stability_and_mapping.py	560	read_csv	pd.read_csv(high_path)	All patient inputs/outputs private; not distributed
+code/source_history/historical_model/20_original_stability_and_mapping.py	561	read_csv	pd.read_csv(missing_path)	All patient inputs/outputs private; not distributed
+code/source_history/historical_model/20_original_stability_and_mapping.py	669	open	(ROOT / '06_common4_selected_model.pkl').open('wb')	All patient inputs/outputs private; not distributed
+code/source_history/historical_model/21_original_k4_finalization.py	37	to_csv	frame.to_csv(ROOT / filename, index=False, encoding='utf-8-sig')	All patient inputs/outputs private; not distributed
+code/source_history/historical_model/21_original_k4_finalization.py	50	read_parquet	pd.read_parquet(MATRIX)	All patient inputs/outputs private; not distributed
+code/source_history/historical_model/21_original_k4_finalization.py	42	open	(ROOT / '06_common4_selected_model.pkl').open('rb')	All patient inputs/outputs private; not distributed
+code/source_history/figure_source/22_current_figure_production.py	103	read_parquet	pd.read_parquet(P / '14_pneumonia_specificity_revision_20261014/private/修订三库全模块分析输入.parquet', columns=['database', 'stay_id', 'phenotype'])	All patient inputs/outputs private; not distributed
+code/source_history/figure_source/22_current_figure_production.py	106	read_parquet	pd.read_parquet(matrix, columns=['database', 'stay_id'] + features)	All patient inputs/outputs private; not distributed
+code/source_history/figure_source/22_current_figure_production.py	112	to_csv	summary.to_csv(O / 'qc/图2逐小时聚合来源.tsv', sep='\t', index=False)	All patient inputs/outputs private; not distributed
+code/source_history/figure_source/22_current_figure_production.py	125	read_parquet	pd.read_parquet(P / '14_pneumonia_specificity_revision_20261014/private/修订逐人冻结参考分布核查.parquet')	All patient inputs/outputs private; not distributed
+code/source_history/figure_source/22_current_figure_production.py	132	write_text	(O / 'qc/图件来源与边界.md').write_text('图1：当前21全流程表。图2：当前严格成员与原小时矩阵，仅聚合；图3：当前主效应、整个住院死亡和普通复合结果；eICU复合明确为ICU范围。图4：当前后验及医院结果。S2/S3：当前覆盖结果。S4/S5：当前逐人冻结参考诊断仅聚合绘图，冻结阈值不变。S1原模型选择图原样保留并注明历史推导。图2–4复用08目录绘图函数布局，去掉旧数值断言并以当前断言取代。未重拟合任何统计模型。\n')	All patient inputs/outputs private; not distributed
+code/source_history/figure_source/22_current_figure_production.py	18	read_csv	pd.read_csv(root / n, sep='\t')	All patient inputs/outputs private; not distributed
+code/source_history/figure_source/22_current_figure_production.py	65	read_parquet	pd.read_parquet(P / '14_pneumonia_specificity_revision_20261014/private/修订医院覆盖率和后验汇总.parquet')	All patient inputs/outputs private; not distributed
+code/source_history/figure_source/22_current_figure_production.py	68	read_parquet	pd.read_parquet(P / '14_pneumonia_specificity_revision_20261014/private/修订逐院剔除效应.parquet')	All patient inputs/outputs private; not distributed
+code/source_history/figure_source/22_current_figure_production.py	20	read_text	old.read_text()	All patient inputs/outputs private; not distributed
+code/source_history/figure_source/23_original_figure_layout_functions.py	39	read_csv	pd.read_csv(path, encoding='utf-8-sig')	All patient inputs/outputs private; not distributed
+code/source_history/figure_source/23_original_figure_layout_functions.py	42	open	Image.open(path)	All patient inputs/outputs private; not distributed

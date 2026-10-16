@@ -1,0 +1,54 @@
+workflow	line	reader	input_expression	access
+06_oxygen_coverage.py	22	read_csv	mr / 'component_means.csv'	private unless current aggregate scaffold
+06_oxygen_coverage.py	25	read_parquet	O / 'private/24维以上严格肺炎候选_原特征结局不变.parquet'	private unless current aggregate scaffold
+06_oxygen_coverage.py	27	read_csv	public_result_path('15_修订覆盖阈值汇总.tsv')	private unless current aggregate scaffold
+06_oxygen_coverage.py	27	read_csv	public_result_path('15_修订覆盖阈值完整效应.tsv')	private unless current aggregate scaffold
+06_oxygen_coverage.py	28	read_parquet	O / 'private/修订三库全模块分析输入.parquet'	private unless current aggregate scaffold
+06_oxygen_coverage.py	28	read_csv	O / 'tables/02_修订主要效应与严重度.tsv'	private unless current aggregate scaffold
+06_oxygen_coverage.py	22	read_csv	mr / 'component_weights.csv'	private unless current aggregate scaffold
+06_oxygen_coverage.py	25	read_parquet	O / 'private/纠正外周血氧汇总_覆盖所有所需阈值.parquet'	private unless current aggregate scaffold
+06_oxygen_coverage.py	22	read_csv	mr / 'standardization_parameters.csv'	private unless current aggregate scaffold
+06_oxygen_coverage.py	22	read_csv	mr / 'feature_order.csv'	private unless current aggregate scaffold
+06_oxygen_coverage.py	23	read_csv	mr / ('covariance_' + p + '.csv')	private unless current aggregate scaffold
+09_hospital_transport.py	26	read_parquet	private / '修订三库全模块分析输入.parquet'	private unless current aggregate scaffold
+09_hospital_transport.py	64	read_parquet	private / '三库修订肺炎资格与纳入标记.parquet'	private unless current aggregate scaffold
+09_hospital_transport.py	65	read_parquet	project / '01_k5-7.29_history/k5-7.29/analysis_k4_evidence_deepening_20260801/01_candidate_outcomes_and_coverage.parquet'	private unless current aggregate scaffold
+03_primary_and_fixed_sensitivities.py	12	read_parquet	Path(os.environ['ANALYSIS_INPUT'])	private unless current aggregate scaffold
+05_fixed_fold_prediction.py	40	read_parquet	sourcepath	private unless current aggregate scaffold
+04_oxygen_affected_associations.py	23	read_parquet	O / 'private/修订三库全模块分析输入.parquet'	private unless current aggregate scaffold
+04_oxygen_affected_associations.py	120	read_parquet	P / 'current_inputs/private/修订eICU逐人原始结局证据.parquet'	private unless current aggregate scaffold
+04_oxygen_affected_associations.py	122	read_parquet	P / 'current_inputs/private/修订eICU竞争风险逐人事件.parquet'	private unless current aggregate scaffold
+04_oxygen_affected_associations.py	69	read_csv	public_result_path(name)	private unless current aggregate scaffold
+04_oxygen_affected_associations.py	78	read_csv	O / 'tables' / cached_name	private unless current aggregate scaffold
+04_oxygen_affected_associations.py	28	read_csv	O / 'tables/02_冗余列与分离诊断.tsv'	private unless current aggregate scaffold
+04_oxygen_affected_associations.py	29	read_csv	O / 'tables/02_各模型血氧缺失与插补.tsv'	private unless current aggregate scaffold
+04_oxygen_affected_associations.py	27	read_csv	qcp	private unless current aggregate scaffold
+01_pneumonia_specificity.py	41	read_parquet	frozenpath	private unless current aggregate scaffold
+01_pneumonia_specificity.py	43	read_parquet	matrixpath	private unless current aggregate scaffold
+01_pneumonia_specificity.py	46	read_parquet	audit / 'private/02_cohort_exclusion_reasons.parquet'	private unless current aggregate scaffold
+01_pneumonia_specificity.py	113	read_parquet	audit / 'private/04_eicu_patient_evidence.parquet'	private unless current aggregate scaffold
+01_pneumonia_specificity.py	65	read_parquet	audit / f'private/03_{prefix}_pneumonia_code_evidence.parquet'	private unless current aggregate scaffold
+01_pneumonia_specificity.py	69	read_csv	dictpath	private unless current aggregate scaffold
+01_pneumonia_specificity.py	85	read_csv	filepath	private unless current aggregate scaffold
+01_pneumonia_specificity.py	126	read_csv	eicu / filename	private unless current aggregate scaffold
+01_pneumonia_specificity.py	122	read_csv	eicu / filename	private unless current aggregate scaffold
+08_time_order.py	48	read_parquet	candidatepath	private unless current aggregate scaffold
+08_time_order.py	49	read_parquet	inputpath	private unless current aggregate scaffold
+08_time_order.py	114	read_csv	tables / '02_修订主要效应与严重度.tsv'	private unless current aggregate scaffold
+08_time_order.py	56	read_csv	result_path	private unless current aggregate scaffold
+08_time_order.py	57	read_csv	qc_path	private unless current aggregate scaffold
+07_domain_early_posterior.py	36	read_csv	root / 'component_means.csv'	private unless current aggregate scaffold
+07_domain_early_posterior.py	55	read_parquet	inputpath	private unless current aggregate scaffold
+07_domain_early_posterior.py	56	read_parquet	history / 'analysis_k4_evidence_deepening_20260801/01_candidate_outcomes_and_coverage.parquet'	private unless current aggregate scaffold
+07_domain_early_posterior.py	58	read_parquet	project / 'revision_R1_R2_data/02_frozen_reproduced_assignments.parquet'	private unless current aggregate scaffold
+07_domain_early_posterior.py	97	read_parquet	private / '三库修订肺炎资格与纳入标记.parquet'	private unless current aggregate scaffold
+07_domain_early_posterior.py	35	read_csv	root / 'component_weights.csv'	private unless current aggregate scaffold
+07_domain_early_posterior.py	87	read_csv	project / 'revision_R1_R2_data/12_domain_shift_summary.csv'	private unless current aggregate scaffold
+07_domain_early_posterior.py	34	read_csv	root / 'standardization_parameters.csv'	private unless current aggregate scaffold
+07_domain_early_posterior.py	86	read_csv	project / '12_eicu_boundary_propagation_20261014/tables/12_三库正确马氏距离诊断.tsv'	private unless current aggregate scaffold
+07_domain_early_posterior.py	33	read_csv	root / 'feature_order.csv'	private unless current aggregate scaffold
+07_domain_early_posterior.py	39	read_csv	root / ('covariance_' + p + '.csv')	private unless current aggregate scaffold
+10_selection_weighting.py	34	read_parquet	private / '三库修订肺炎资格与纳入标记.parquet'	private unless current aggregate scaffold
+10_selection_weighting.py	35	read_parquet	project / '01_k5-7.29_history/k5-7.29/analysis_k4_evidence_deepening_20260801/01_candidate_outcomes_and_coverage.parquet'	private unless current aggregate scaffold
+10_selection_weighting.py	38	read_parquet	private / '修订三库全模块分析输入.parquet'	private unless current aggregate scaffold
+10_selection_weighting.py	39	read_csv	raw / 'MIMIC-III_1.4/mimic-iii-clinical-database-1.4/ICUSTAYS.csv.gz'	private unless current aggregate scaffold

@@ -1,0 +1,5 @@
+# Pillow: imported by historical source; not installed in the current core analysis environment, historical version unverified.
+# duckdb: imported by historical source; not installed in the current core analysis environment, historical version unverified.
+joblib==1.6.0
+# matplotlib: imported by historical source; not installed in the current core analysis environment, historical version unverified.
+# seaborn: imported by historical source; not installed in the current core analysis environment, historical version unverified.

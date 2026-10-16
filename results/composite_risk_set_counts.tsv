@@ -1,0 +1,5 @@
+database	horizon_hours	revised_N	removed_N	revised_FG_events	revised_competing	window_end	ordinary_composite_events	ordinary_minus_FG	post_exit_hospital_deaths_in_window	exit_death_ties
+MIMIC-IV	24	8468	188	913	2423	5132	922	9	9	6
+MIMIC-III	24	2091	1	290	581	1220	291	1	1	0
+MIMIC-IV	48	8468	188	1265	4074	3129	1295	30	31	6
+MIMIC-III	48	2091	1	419	1054	618	421	2	2	0

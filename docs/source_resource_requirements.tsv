@@ -1,0 +1,51 @@
+resource_key	basename	used_by	requirement
+SOURCE_1B251D2246	run_20260517_083542	code/source_history/raw/01_pneumonia_identification.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_B41C1FC8CF	EICU 2.0数据	code/source_history/raw/01_pneumonia_identification.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_1B251D2246	run_20260517_083542	code/source_history/raw/02_mimiciv_legacy_hourly.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_E15CB3D6F9	mimic-iv-3.1.zip	code/source_history/raw/02_mimiciv_legacy_hourly.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_1B251D2246	run_20260517_083542	code/source_history/raw/03_mimiciii_legacy_hourly.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_1D1D312607	mimic-iii-clinical-database-1.4.zip	code/source_history/raw/03_mimiciii_legacy_hourly.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_1B251D2246	run_20260517_083542	code/source_history/raw/04_eicu_legacy_hourly.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_B41C1FC8CF	EICU 2.0数据	code/source_history/raw/04_eicu_legacy_hourly.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_9A17FFCF9A	重症数据库	code/source_history/raw/05_corrected_source_candidate_functions.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_9A17FFCF9A	重症数据库	code/source_history/raw/06_corrected_hourly_source.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_1B251D2246	run_20260517_083542	code/source_history/raw/06b_original_clinical_extraction.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_E15CB3D6F9	mimic-iv-3.1.zip	code/source_history/raw/06b_original_clinical_extraction.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_1D1D312607	mimic-iii-clinical-database-1.4.zip	code/source_history/raw/06b_original_clinical_extraction.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_B41C1FC8CF	EICU 2.0数据	code/source_history/raw/06b_original_clinical_extraction.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_9A17FFCF9A	重症数据库	code/source_history/raw/06c_original_respiratory_auxiliary.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_0C46C81942	2026-05-29	code/source_history/assembly/07_landmark_source_functions.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_C74F17AEDB	2026-05-17	code/source_history/assembly/07_landmark_source_functions.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_68000518F1	2026-06-01	code/source_history/assembly/07_landmark_source_functions.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_31F1D1CB18	02_raw_extract	code/source_history/assembly/07_landmark_source_functions.py	Set to legally held private path outside repository; exact role follows source expression
+CLEANING_SCHEMA	cleaning_ranges.csv	code/source_history/assembly/07_landmark_source_functions.py	Original historical five-vital cleaning ranges only; no fitted standardisation or mixture parameters. Required by build_landmark_matrix.
+SOURCE_31F1D1CB18	02_raw_extract	code/source_history/assembly/08_candidate_attribute_source.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_E14A791BB8	analysis_main12_clinical_actionability_20260730	code/source_history/assembly/09_organ_support_endpoints.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_31F1D1CB18	02_raw_extract	code/source_history/assembly/09_organ_support_endpoints.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_D31F440F3F	icu	code/source_history/assembly/09_organ_support_endpoints.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_EB6E6A9325	mimic-iii-clinical-database-1.4	code/source_history/assembly/09_organ_support_endpoints.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_9EC2BBF0E8	EICU 2.0数据	code/source_history/assembly/09_organ_support_endpoints.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_7E9AB01024	bmc-k4修改	code/source_history/assembly/10_diagnosis_recovery_functions.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_31F1D1CB18	02_raw_extract	code/source_history/assembly/10_diagnosis_recovery_functions.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_C74F17AEDB	2026-05-17	code/source_history/assembly/10_diagnosis_recovery_functions.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_550D92AA9D	重症数据库原始数据	code/source_history/assembly/10_diagnosis_recovery_functions.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_2F37D9D736	02_k4_Revised_Clean (3).docx	code/source_history/assembly/11_eicu_evidence_collection.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_7C5C0EEAE0	04_Supplementary_Material_Revised.docx	code/source_history/assembly/11_eicu_evidence_collection.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_550D92AA9D	重症数据库原始数据	code/source_history/assembly/17_original_pulse_oxygen_reconstruction.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_7E9AB01024	bmc-k4修改	code/source_history/assembly/18_current_oxygen_frame_replacement.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_550D92AA9D	重症数据库原始数据	code/source_history/assembly/18_current_oxygen_frame_replacement.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_C1E4D8E159	revision_R1_R2_data	code/source_history/assembly/18b_original_input_loading.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_7E9AB01024	bmc-k4修改	code/source_history/assembly/18b_original_input_loading.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_C74F17AEDB	2026-05-17	code/source_history/assembly/18b_original_input_loading.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_C950215C87	apachePatientResult.csv.gz	code/source_history/assembly/18b_original_input_loading.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_E14A791BB8	analysis_main12_clinical_actionability_20260730	code/source_history/historical_model/19_outcome_free_grid.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_570F6B93E3	14_landmark12_candidate_matrix.parquet	code/source_history/historical_model/19_outcome_free_grid.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_E14A791BB8	analysis_main12_clinical_actionability_20260730	code/source_history/historical_model/20_original_stability_and_mapping.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_570F6B93E3	14_landmark12_candidate_matrix.parquet	code/source_history/historical_model/20_original_stability_and_mapping.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_BD75AD4448	27_landmark_refit_assignments.parquet	code/source_history/historical_model/20_original_stability_and_mapping.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_E14A791BB8	analysis_main12_clinical_actionability_20260730	code/source_history/historical_model/21_original_k4_finalization.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_570F6B93E3	14_landmark12_candidate_matrix.parquet	code/source_history/historical_model/21_original_k4_finalization.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_7E9AB01024	bmc-k4修改	code/source_history/figure_source/22_current_figure_production.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_2E845E495A	k5-7.29	code/source_history/figure_source/23_original_figure_layout_functions.py	Set to legally held private path outside repository; exact role follows source expression
+SOURCE_3325750DD5	revised_figures	code/source_history/figure_source/23_original_figure_layout_functions.py	Set to legally held private path outside repository; exact role follows source expression
+FEATURE_MATRIX	private_feature_matrix.parquet	code/core/clinical.py	Actual original candidate hourly feature matrix for append_vital_summaries; keep outside repository.

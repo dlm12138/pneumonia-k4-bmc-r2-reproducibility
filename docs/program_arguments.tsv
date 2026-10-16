@@ -1,0 +1,42 @@
+program	argument	configuration
+code/render_sql.py	template	
+code/render_sql.py	--raw-database-dir	required=True
+code/render_sql.py	--selected-keys	required=True
+code/render_sql.py	--output	required=True
+code/run_source_reference.py	source	help='Path under code/source_history'
+code/run_source_reference.py	--execute-source-reference	action='store_true'
+code/run_source_reference.py	--allow-historical-fit	action='store_true'
+code/run_source_reference.py	arguments	nargs=argparse.REMAINDER
+code/source_history/assembly/11_eicu_evidence_collection.py	--project	required=True
+code/source_history/assembly/11_eicu_evidence_collection.py	--raw	required=True
+code/source_history/assembly/11_eicu_evidence_collection.py	--output	required=True
+code/source_history/assembly/12_eicu_event_classification.py	--project	required=True
+code/source_history/assembly/12_eicu_event_classification.py	--output	required=True
+code/source_history/assembly/13_strict_frame_assembly_source.py	--project	required=True
+code/source_history/assembly/13_strict_frame_assembly_source.py	--output	required=True
+code/source_history/assembly/14_clinical_and_event_assembly.py	--project	required=True
+code/source_history/assembly/14_clinical_and_event_assembly.py	--output	required=True
+code/source_history/assembly/15_eicu_endpoint_sensitivities.py	--project	required=True
+code/source_history/assembly/15_eicu_endpoint_sensitivities.py	--output	required=True
+code/source_history/assembly/16_mimic_event_assembly.py	--project	required=True
+code/source_history/assembly/16_mimic_event_assembly.py	--output	required=True
+code/source_history/assembly/17_original_pulse_oxygen_reconstruction.py	--project	required=True
+code/source_history/assembly/17_original_pulse_oxygen_reconstruction.py	--output	required=True
+code/source_history/assembly/17_original_pulse_oxygen_reconstruction.py	--databases	nargs='+'; default=['MIMIC-IV', 'MIMIC-III', 'eICU']
+code/tests_source_history.py	--output-root	required=True
+code/tests_synthetic.py	--output-root	required=True
+code/tests_synthetic.py	--duckdb	default='duckdb'
+code/workflows/01_pneumonia_specificity.py	--project	required=True
+code/workflows/01_pneumonia_specificity.py	--output	required=True
+code/workflows/01_pneumonia_specificity.py	--raw	required=True
+code/workflows/05_fixed_fold_prediction.py	--project	required=True
+code/workflows/05_fixed_fold_prediction.py	--output	required=True
+code/workflows/07_domain_early_posterior.py	--project	required=True
+code/workflows/07_domain_early_posterior.py	--output	required=True
+code/workflows/08_time_order.py	--project	required=True
+code/workflows/08_time_order.py	--output	required=True
+code/workflows/09_hospital_transport.py	--project	required=True
+code/workflows/09_hospital_transport.py	--output	required=True
+code/workflows/10_selection_weighting.py	--project	required=True
+code/workflows/10_selection_weighting.py	--output	required=True
+code/workflows/10_selection_weighting.py	--raw	required=True

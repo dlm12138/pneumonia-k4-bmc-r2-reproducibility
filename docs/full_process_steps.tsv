@@ -1,0 +1,28 @@
+step	stage	actual_program	input	output	check_or_stop	reproduction_status
+01	数据库访问与环境	docs/data_access.md; requirements.txt	MIMIC-IV3.1/MIMIC-III1.4/eICU2.0合法授权	本地只读原始表；独立私有输出目录	授权和版本；禁止原始数据发布	可公开说明；数据不公开
+02	历史肺炎候选提取	code/source_history/raw/01_pneumonia_identification.py	三库人口、住院、ICU、诊断表与字典	三库pneumonia_stays_raw.csv	历史宽规则不是当前严格资格	源程序可查；患者输出不公开
+03	旧小时级来源	code/source_history/raw/02_mimiciv_legacy_hourly.py; code/source_history/raw/03_mimiciii_legacy_hourly.py; code/source_history/raw/04_eicu_legacy_hourly.py	历史候选键、原始生命体征	三库旧小时均值	原始项目映射、单位和小时边界	源程序可查；仅历史来源
+04	纠正来源子集	code/source_history/raw/05_corrected_source_candidate_functions.py; code/source_history/raw/06_corrected_hourly_source.py	当时可行性输入清单和原始表	纠正来源候选与小时表	不同资格子集；不当作最终肺炎队列	源程序可查；需私有输入清单
+05	界标与来源优先级	code/source_history/assembly/07_landmark_source_functions.py	旧候选与两层小时来源、清洗边界	历史界标矩阵和source_tier	成人、存活、ICU≥12h；每人来源优先级	真实函数；非独立一键入口
+06	历史模型搜索	code/source_history/historical_model/19_outcome_free_grid.py	历史推导48维输入	原始候选模型诊断和拟合资产	结局不参与；当前应用不得以新拟合替代	历史推导源程序；当前应用使用原冻结模型
+07	稳定性和K4冻结	code/source_history/historical_model/20_original_stability_and_mapping.py; code/source_history/historical_model/21_original_k4_finalization.py	原历史拟合与参照映射	最终K4及原P1–P4映射	不得重排或以新拟合替代	数值资产受限
+08	冻结模型计算	code/core/locked_k4.py; code/core/early_assignment.py	原冻结参数、特征顺序和患者48维输入	原分型和后验	外部不重标准化、不拟合；观测维边际似然	参数缺失则停止该分支
+09	支持与普通结局	code/source_history/assembly/09_organ_support_endpoints.py; code/source_history/raw/06b_original_clinical_extraction.py; code/source_history/raw/06c_original_respiratory_auxiliary.py	合法原始支持记录、旧临床和呼吸辅助来源、冻结分型	支持时段、临床呼吸中间输入、主次结局私有表	旧血氧与有限诊断覆盖后续必须纠正；(12,36]h记录院内死亡；支持时间按真实表	实际全程序；患者级输出禁止发布
+10	候选属性与系统	code/source_history/assembly/08_candidate_attribute_source.py	界标矩阵、原分型、原提取表	候选结局、coverage、DBSOURCE	保留CareVue结构性0覆盖	真实函数；私人输入前提
+11	eICU结局证据	code/source_history/assembly/11_eicu_evidence_collection.py; code/source_history/assembly/12_eicu_event_classification.py	patient、APACHE和同住院ICU记录	冲突标记、方案逐人事件	不把内部一致性称临床真值	229逐人记录禁止公开
+12	原诊断表恢复	code/source_history/assembly/10_diagnosis_recovery_functions.py; code/core/comorbidity_definitions.py	原始MIMIC诊断、旧临床来源、候选	原始共病和来源可用性	无诊断来源不等于无病	真实函数；患者级输出受限
+13	严格肺炎资格	code/workflows/01_pneumonia_specificity.py	原候选、流程、诊断证据、冻结标签	严格界标与可分型资格	排除短词和U071-only；出科>12h	实际当前门控
+14	严格分析输入组装	code/source_history/assembly/13_strict_frame_assembly_source.py	资格、冻结后验、结局、摘要、原fold	严格全模块私有输入	与原fold一对一；旧血氧仅中间值	实际源程序；必须接步骤16
+15	临床表征和事件子集	code/source_history/assembly/14_clinical_and_event_assembly.py	恢复共病、严格资格、eICU事件	临床表、诊断时间和严格事件输入	原始有效诊断行；时间不等于起病	实际源程序；血氧描述须后更新
+16	血氧完整纠正	code/source_history/assembly/17_original_pulse_oxygen_reconstruction.py; code/source_history/assembly/18_current_oxygen_frame_replacement.py; code/sql/	外周血氧指定项目、>=24阈值候选	八列整体替换后的最终输入	0≤t<12h；50–100%；先小时均值再最低	实际源程序；非血氧输入不变
+17	主分析和固定敏感性	code/workflows/03_primary_and_fixed_sensitivities.py	当前完整输入、原P1–P4	主效应、HR/RR、APACHE、共病汇总	分母、事件、参照、HC0/聚类方差	调用原统计函数的执行入口
+18	血氧和完全调整	code/workflows/04_oxygen_affected_associations.py	最终纠正输入与私有事件	纠正严重度、完整HR/RR、住院/复合	分离不可估计保留；RRT不删除	当前实际流程
+19	固定五种预测与配对	code/workflows/05_fixed_fold_prediction.py	当前输入及原五折	预测指标及配对差值汇总	C=1.0；固定fold；不调参	当前实际流程；不公开OOF逐人值
+20	覆盖阈值	code/workflows/06_oxygen_coverage.py	>=24严格候选、冻结参数、纠正血氧	24/28/32/36/40汇总	新增者血氧同定义；不重新拟合	参数和私人候选受限
+21	分布早期后验	code/workflows/07_domain_early_posterior.py	历史参考、当前候选、冻结参数	分布漂移和后验敏感性	历史参考与当前应用区分	真实流程；参考和参数受限
+22	时间顺序扰动	code/workflows/08_time_order.py	原特征、冻结模型和随机设置	ARI、扰动关联、置换分位数	关联保留不等于成员稳定	真实流程；参数受限
+23	医院迁移	code/workflows/09_hospital_transport.py; code/workflows/13_hospital_hierarchical.R	合法医院分组与当前结局	医院汇总、LOHO、层级模型	小医院事件限制；不公开医院ID	真实流程
+24	选择加权	code/workflows/10_selection_weighting.py	候选、系统和可分型标记	权重、ESS、平衡和加权效应	CareVue0/5173不能用权重恢复	真实流程
+25	普通与竞争结局	code/source_history/assembly/15_eicu_endpoint_sensitivities.py; code/source_history/assembly/16_mimic_event_assembly.py; code/workflows/11_eicu_finegray.R; code/workflows/12_mimic_finegray.R	私有支持时点、死亡代理、ICU出科	普通复合OR与竞争SHR	出科后院内死亡和在ICU目标不同；OR不混SHR	实际流程与定义
+26	当前数字与图表制作	results/; docs/results_provenance.tsv; code/source_history/figure_source/22_current_figure_production.py; code/source_history/figure_source/23_original_figure_layout_functions.py	42张当前审核汇总、原小时矩阵、私有医院分布和历史绘图布局	论文表图；不含血氧的既有图沿用其原数据来源	冻结参数图与应用人群描述图区分；历史布局函数不单独证明与投稿图一致	图件程序与布局函数可查；私有绘图输入不公开
+27	模拟验证与复现边界	code/tests_synthetic.py; docs/full_research_process.md	明确的人工模拟输入	实现性质及边界条件检查	通过模拟不证明临床真值或真实数据端到端复现	模拟验证程序可运行；真实数据复现需满足各分支前提

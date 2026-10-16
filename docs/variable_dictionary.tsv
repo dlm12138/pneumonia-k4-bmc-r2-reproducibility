@@ -1,0 +1,144 @@
+variable	meaning	unit	time_window	role
+SBP_h0	hourly mean systolic blood pressure	mmHg	[0,1) h after ICU admission	phenotype-defining; patient values not released
+SBP_h1	hourly mean systolic blood pressure	mmHg	[1,2) h after ICU admission	phenotype-defining; patient values not released
+SBP_h2	hourly mean systolic blood pressure	mmHg	[2,3) h after ICU admission	phenotype-defining; patient values not released
+SBP_h3	hourly mean systolic blood pressure	mmHg	[3,4) h after ICU admission	phenotype-defining; patient values not released
+SBP_h4	hourly mean systolic blood pressure	mmHg	[4,5) h after ICU admission	phenotype-defining; patient values not released
+SBP_h5	hourly mean systolic blood pressure	mmHg	[5,6) h after ICU admission	phenotype-defining; patient values not released
+SBP_h6	hourly mean systolic blood pressure	mmHg	[6,7) h after ICU admission	phenotype-defining; patient values not released
+SBP_h7	hourly mean systolic blood pressure	mmHg	[7,8) h after ICU admission	phenotype-defining; patient values not released
+SBP_h8	hourly mean systolic blood pressure	mmHg	[8,9) h after ICU admission	phenotype-defining; patient values not released
+SBP_h9	hourly mean systolic blood pressure	mmHg	[9,10) h after ICU admission	phenotype-defining; patient values not released
+SBP_h10	hourly mean systolic blood pressure	mmHg	[10,11) h after ICU admission	phenotype-defining; patient values not released
+SBP_h11	hourly mean systolic blood pressure	mmHg	[11,12) h after ICU admission	phenotype-defining; patient values not released
+SBP_mean	mean of hourly means for systolic blood pressure	mmHg	[0,12) h	conventional prediction/description
+SBP_count	number of observed hourly means for systolic blood pressure	hours	[0,12) h	conventional prediction/description
+SBP_sd	sample SD of hourly means for systolic blood pressure	mmHg	[0,12) h	conventional prediction/description
+SBP_slope	OLS hourly slope for systolic blood pressure	mmHg/h	[0,12) h	conventional prediction/description
+DBP_h0	hourly mean diastolic blood pressure	mmHg	[0,1) h after ICU admission	phenotype-defining; patient values not released
+DBP_h1	hourly mean diastolic blood pressure	mmHg	[1,2) h after ICU admission	phenotype-defining; patient values not released
+DBP_h2	hourly mean diastolic blood pressure	mmHg	[2,3) h after ICU admission	phenotype-defining; patient values not released
+DBP_h3	hourly mean diastolic blood pressure	mmHg	[3,4) h after ICU admission	phenotype-defining; patient values not released
+DBP_h4	hourly mean diastolic blood pressure	mmHg	[4,5) h after ICU admission	phenotype-defining; patient values not released
+DBP_h5	hourly mean diastolic blood pressure	mmHg	[5,6) h after ICU admission	phenotype-defining; patient values not released
+DBP_h6	hourly mean diastolic blood pressure	mmHg	[6,7) h after ICU admission	phenotype-defining; patient values not released
+DBP_h7	hourly mean diastolic blood pressure	mmHg	[7,8) h after ICU admission	phenotype-defining; patient values not released
+DBP_h8	hourly mean diastolic blood pressure	mmHg	[8,9) h after ICU admission	phenotype-defining; patient values not released
+DBP_h9	hourly mean diastolic blood pressure	mmHg	[9,10) h after ICU admission	phenotype-defining; patient values not released
+DBP_h10	hourly mean diastolic blood pressure	mmHg	[10,11) h after ICU admission	phenotype-defining; patient values not released
+DBP_h11	hourly mean diastolic blood pressure	mmHg	[11,12) h after ICU admission	phenotype-defining; patient values not released
+DBP_mean	mean of hourly means for diastolic blood pressure	mmHg	[0,12) h	conventional prediction/description
+DBP_count	number of observed hourly means for diastolic blood pressure	hours	[0,12) h	conventional prediction/description
+DBP_sd	sample SD of hourly means for diastolic blood pressure	mmHg	[0,12) h	conventional prediction/description
+DBP_slope	OLS hourly slope for diastolic blood pressure	mmHg/h	[0,12) h	conventional prediction/description
+HR_h0	hourly mean heart rate	beats/min	[0,1) h after ICU admission	phenotype-defining; patient values not released
+HR_h1	hourly mean heart rate	beats/min	[1,2) h after ICU admission	phenotype-defining; patient values not released
+HR_h2	hourly mean heart rate	beats/min	[2,3) h after ICU admission	phenotype-defining; patient values not released
+HR_h3	hourly mean heart rate	beats/min	[3,4) h after ICU admission	phenotype-defining; patient values not released
+HR_h4	hourly mean heart rate	beats/min	[4,5) h after ICU admission	phenotype-defining; patient values not released
+HR_h5	hourly mean heart rate	beats/min	[5,6) h after ICU admission	phenotype-defining; patient values not released
+HR_h6	hourly mean heart rate	beats/min	[6,7) h after ICU admission	phenotype-defining; patient values not released
+HR_h7	hourly mean heart rate	beats/min	[7,8) h after ICU admission	phenotype-defining; patient values not released
+HR_h8	hourly mean heart rate	beats/min	[8,9) h after ICU admission	phenotype-defining; patient values not released
+HR_h9	hourly mean heart rate	beats/min	[9,10) h after ICU admission	phenotype-defining; patient values not released
+HR_h10	hourly mean heart rate	beats/min	[10,11) h after ICU admission	phenotype-defining; patient values not released
+HR_h11	hourly mean heart rate	beats/min	[11,12) h after ICU admission	phenotype-defining; patient values not released
+HR_mean	mean of hourly means for heart rate	beats/min	[0,12) h	conventional prediction/description
+HR_count	number of observed hourly means for heart rate	hours	[0,12) h	conventional prediction/description
+HR_sd	sample SD of hourly means for heart rate	beats/min	[0,12) h	conventional prediction/description
+HR_slope	OLS hourly slope for heart rate	beats/min/h	[0,12) h	conventional prediction/description
+RR_h0	hourly mean respiratory rate	breaths/min	[0,1) h after ICU admission	phenotype-defining; patient values not released
+RR_h1	hourly mean respiratory rate	breaths/min	[1,2) h after ICU admission	phenotype-defining; patient values not released
+RR_h2	hourly mean respiratory rate	breaths/min	[2,3) h after ICU admission	phenotype-defining; patient values not released
+RR_h3	hourly mean respiratory rate	breaths/min	[3,4) h after ICU admission	phenotype-defining; patient values not released
+RR_h4	hourly mean respiratory rate	breaths/min	[4,5) h after ICU admission	phenotype-defining; patient values not released
+RR_h5	hourly mean respiratory rate	breaths/min	[5,6) h after ICU admission	phenotype-defining; patient values not released
+RR_h6	hourly mean respiratory rate	breaths/min	[6,7) h after ICU admission	phenotype-defining; patient values not released
+RR_h7	hourly mean respiratory rate	breaths/min	[7,8) h after ICU admission	phenotype-defining; patient values not released
+RR_h8	hourly mean respiratory rate	breaths/min	[8,9) h after ICU admission	phenotype-defining; patient values not released
+RR_h9	hourly mean respiratory rate	breaths/min	[9,10) h after ICU admission	phenotype-defining; patient values not released
+RR_h10	hourly mean respiratory rate	breaths/min	[10,11) h after ICU admission	phenotype-defining; patient values not released
+RR_h11	hourly mean respiratory rate	breaths/min	[11,12) h after ICU admission	phenotype-defining; patient values not released
+RR_mean	mean of hourly means for respiratory rate	breaths/min	[0,12) h	conventional prediction/description
+RR_count	number of observed hourly means for respiratory rate	hours	[0,12) h	conventional prediction/description
+RR_sd	sample SD of hourly means for respiratory rate	breaths/min	[0,12) h	conventional prediction/description
+RR_slope	OLS hourly slope for respiratory rate	breaths/min/h	[0,12) h	conventional prediction/description
+database	source database/version label	category	source	analysis input/derived variable; no patient rows released
+phenotype	original locked P1–P4 assignment	category	12 h landmark	analysis input/derived variable; no patient rows released
+age	age at ICU admission	years	ICU admission	analysis input/derived variable; no patient rows released
+male	recorded sex indicator	0/1	ICU admission	analysis input/derived variable; no patient rows released
+observed_dimensions_48d	observed hourly dimensions among 48	count	[0,12) h	analysis input/derived variable; no patient rows released
+age10	age divided by ten	10 years	ICU admission	analysis input/derived variable; no patient rows released
+coverage10	coverage divided by ten	10 observed dimensions	[0,12) h	analysis input/derived variable; no patient rows released
+SpO2_min10	minimum valid hourly pulse-oxygen mean divided by ten	10 percentage points	[0,12) h	analysis input/derived variable; no patient rows released
+SpO2_min_0_12h_missing	missing valid hourly pulse oxygen	0/1	[0,12) h	analysis input/derived variable; no patient rows released
+fixed_HRRR_rule	HR_mean>90 and RR_mean>20	0/1	[0,12) h	analysis input/derived variable; no patient rows released
+acutephysiologyscore	eICU APACHE IVa acute physiology score	score	APACHE assessment; entire-stay sensitivity only	analysis input/derived variable; no patient rows released
+APS10	acute physiology score divided by ten	10 score units	APACHE assessment	analysis input/derived variable; no patient rows released
+fold	original saved group cross-validation fold	integer 0–4	original fold assignment	analysis input/derived variable; no patient rows released
+death_24h	recorded in-hospital death after landmark	0/1	(12,36] h after ICU admission	analysis input/derived variable; no patient rows released
+hospital_mortality	recorded entire hospital-stay death	0/1	entire hospital stay	analysis input/derived variable; no patient rows released
+support_free_at_12h	no qualifying organ support recorded at landmark	0/1	12 h landmark	analysis input/derived variable; no patient rows released
+organ_support_or_death_24h	ordinary incident organ-support/death composite	0/1	24 h after landmark	analysis input/derived variable; no patient rows released
+early_specific	qualifying pneumonia documentation by 12 h	0/1	eICU record offset<=720 min	analysis input/derived variable; no patient rows released
+aspiration_only	aspiration-related code without qualifying pneumonia code	0/1	coded admission	analysis input/derived variable; no patient rows released
+status	0 censor; 1 target; 2 competing discharge	category	specified 24/48 h after landmark	analysis input/derived variable; no patient rows released
+time_from_landmark	time to classified target/competing/censor event	hours	since 12 h landmark	analysis input/derived variable; no patient rows released
+horizon_hours	observation horizon following landmark	hours	24 or 48	analysis input/derived variable; no patient rows released
+raw_valid_diagnosis_rows	count of available valid raw diagnosis records	count	coded admission	analysis input/derived variable; no patient rows released
+stay_id	schema linkage/grouping field; no actual identifier values included	identifier schema only	linkage	restricted values; names retained only in code/docs
+patient_id	schema linkage/grouping field; no actual identifier values included	identifier schema only	linkage	restricted values; names retained only in code/docs
+subject_id	schema linkage/grouping field; no actual identifier values included	identifier schema only	linkage	restricted values; names retained only in code/docs
+hadm_id	schema linkage/grouping field; no actual identifier values included	identifier schema only	linkage	restricted values; names retained only in code/docs
+patientunitstayid	schema linkage/grouping field; no actual identifier values included	identifier schema only	linkage	restricted values; names retained only in code/docs
+hospital_id	schema linkage/grouping field; no actual identifier values included	identifier schema only	linkage	restricted values; names retained only in code/docs
+SpO2_mean_0_12h	pulse oxygen summary of valid hourly means; not raw minima/record-weighted summary	%	[0,12) h	external descriptor/adjustment; source-specific
+SpO2_max_0_12h	pulse oxygen summary of valid hourly means; not raw minima/record-weighted summary	%	[0,12) h	external descriptor/adjustment; source-specific
+SpO2_min_0_12h	pulse oxygen summary of valid hourly means; not raw minima/record-weighted summary	%	[0,12) h	external descriptor/adjustment; source-specific
+SpO2_sd_0_12h	pulse oxygen summary of valid hourly means; not raw minima/record-weighted summary	%	[0,12) h	external descriptor/adjustment; source-specific
+SpO2_n_records_0_12h	pulse oxygen summary of valid hourly means; not raw minima/record-weighted summary	observed hours	[0,12) h	external descriptor/adjustment; source-specific
+SpO2_burden_lt90_0_12h	pulse oxygen summary of valid hourly means; not raw minima/record-weighted summary	fraction of observed hours	[0,12) h	external descriptor/adjustment; source-specific
+SpO2_burden_lt92_0_12h	pulse oxygen summary of valid hourly means; not raw minima/record-weighted summary	fraction of observed hours	[0,12) h	external descriptor/adjustment; source-specific
+SpO2_burden_lt94_0_12h	pulse oxygen summary of valid hourly means; not raw minima/record-weighted summary	fraction of observed hours	[0,12) h	external descriptor/adjustment; source-specific
+active_invasive_ventilation_at_12h	invasive ventilation proxy	0/1	MIMIC: interval spanning12h; eICU: interval OR treatment record by12h	external descriptor/adjustment; legacy names do not establish exact eICU activity
+active_vasopressor_at_12h	vasopressor proxy	0/1	MIMIC: interval spanning12h; eICU positive-rate (6,12]h record	external descriptor/adjustment; legacy names do not establish exact eICU activity
+active_RRT_at_12h	renal replacement therapy proxy	0/1	MIMIC: procedure interval spanning12h; eICU qualifying treatment by12h	external descriptor/adjustment; legacy names do not establish exact eICU activity
+raw_myocardial_infarction	diagnosis-derived myocardial infarction; absent code is not proven absence	0/1	coded admission; onset timing unresolved	recovered MIMIC sensitivity/clinical descriptor
+comorb_myocardial_infarction	diagnosis-derived myocardial infarction; absent code is not proven absence	0/1	coded admission; onset timing unresolved	recovered MIMIC sensitivity/clinical descriptor
+raw_heart_failure	diagnosis-derived heart failure; absent code is not proven absence	0/1	coded admission; onset timing unresolved	recovered MIMIC sensitivity/clinical descriptor
+comorb_heart_failure	diagnosis-derived heart failure; absent code is not proven absence	0/1	coded admission; onset timing unresolved	recovered MIMIC sensitivity/clinical descriptor
+raw_cerebrovascular	diagnosis-derived cerebrovascular; absent code is not proven absence	0/1	coded admission; onset timing unresolved	recovered MIMIC sensitivity/clinical descriptor
+comorb_cerebrovascular	diagnosis-derived cerebrovascular; absent code is not proven absence	0/1	coded admission; onset timing unresolved	recovered MIMIC sensitivity/clinical descriptor
+raw_chronic_pulmonary	diagnosis-derived chronic pulmonary; absent code is not proven absence	0/1	coded admission; onset timing unresolved	recovered MIMIC sensitivity/clinical descriptor
+comorb_chronic_pulmonary	diagnosis-derived chronic pulmonary; absent code is not proven absence	0/1	coded admission; onset timing unresolved	recovered MIMIC sensitivity/clinical descriptor
+raw_diabetes	diagnosis-derived diabetes; absent code is not proven absence	0/1	coded admission; onset timing unresolved	recovered MIMIC sensitivity/clinical descriptor
+comorb_diabetes	diagnosis-derived diabetes; absent code is not proven absence	0/1	coded admission; onset timing unresolved	recovered MIMIC sensitivity/clinical descriptor
+raw_liver_disease	diagnosis-derived liver disease; absent code is not proven absence	0/1	coded admission; onset timing unresolved	recovered MIMIC sensitivity/clinical descriptor
+comorb_liver_disease	diagnosis-derived liver disease; absent code is not proven absence	0/1	coded admission; onset timing unresolved	recovered MIMIC sensitivity/clinical descriptor
+raw_renal_disease	diagnosis-derived renal disease; absent code is not proven absence	0/1	coded admission; onset timing unresolved	recovered MIMIC sensitivity/clinical descriptor
+comorb_renal_disease	diagnosis-derived renal disease; absent code is not proven absence	0/1	coded admission; onset timing unresolved	recovered MIMIC sensitivity/clinical descriptor
+raw_malignancy	diagnosis-derived malignancy; absent code is not proven absence	0/1	coded admission; onset timing unresolved	recovered MIMIC sensitivity/clinical descriptor
+comorb_malignancy	diagnosis-derived malignancy; absent code is not proven absence	0/1	coded admission; onset timing unresolved	recovered MIMIC sensitivity/clinical descriptor
+death_time_from_icu_admission	recorded event time used in the specified outcome algorithm	hours since ICU admission	specified endpoint window	restricted event evidence; eICU death proxy remains uncertain
+exit_hours	recorded event time used in the specified outcome algorithm	hours since ICU admission	specified endpoint window	restricted event evidence; eICU death proxy remains uncertain
+target_hours	recorded event time used in the specified outcome algorithm	hours since ICU admission	specified endpoint window	restricted event evidence; eICU death proxy remains uncertain
+first_support_hours	recorded event time used in the specified outcome algorithm	hours since ICU admission	specified endpoint window	restricted event evidence; eICU death proxy remains uncertain
+first_post12_vasopressor_time	recorded event time used in the specified outcome algorithm	hours since ICU admission	specified endpoint window	restricted event evidence; eICU death proxy remains uncertain
+first_post12_invasive_ventilation_time	recorded event time used in the specified outcome algorithm	hours since ICU admission	specified endpoint window	restricted event evidence; eICU death proxy remains uncertain
+first_post12_RRT_time	recorded event time used in the specified outcome algorithm	hours since ICU admission	specified endpoint window	restricted event evidence; eICU death proxy remains uncertain
+posterior_P1	posterior membership probability of P1	probability	12 h landmark	requires restricted numerical assets; individual probabilities not public
+posterior_P2	posterior membership probability of P2	probability	12 h landmark	requires restricted numerical assets; individual probabilities not public
+posterior_P3	posterior membership probability of P3	probability	12 h landmark	requires restricted numerical assets; individual probabilities not public
+posterior_P4	posterior membership probability of P4	probability	12 h landmark	requires restricted numerical assets; individual probabilities not public
+OR	conditional odds ratio vs stated reference	ratio	specific model/outcome window	aggregate statistical result; intervals keyed by source columns
+SHR	subdistribution hazard ratio vs stated reference	ratio	specific model/outcome window	aggregate statistical result; intervals keyed by source columns
+RD_vs_P2_fraction	standardised absolute risk difference vs P2	fraction	specific model/outcome window	aggregate statistical result; intervals keyed by source columns
+AUROC	area under ROC curve	0–1	specific model/outcome window	aggregate statistical result; intervals keyed by source columns
+AUPRC	area under precision-recall curve	0–1	specific model/outcome window	aggregate statistical result; intervals keyed by source columns
+Brier	mean squared prediction error	0–1	specific model/outcome window	aggregate statistical result; intervals keyed by source columns
+log_loss	binary log loss	natural-log scale	specific model/outcome window	aggregate statistical result; intervals keyed by source columns
+calibration_intercept	logit calibration intercept	logit	specific model/outcome window	aggregate statistical result; intervals keyed by source columns
+calibration_slope	logit calibration slope	slope	specific model/outcome window	aggregate statistical result; intervals keyed by source columns
+ARI	adjusted Rand index	index	specific model/outcome window	aggregate statistical result; intervals keyed by source columns
+JSD	Jensen–Shannon divergence	natural-log scale	specific model/outcome window	aggregate statistical result; intervals keyed by source columns
+ESS	effective sample size of specified weights	effective observations	specific model/outcome window	aggregate statistical result; intervals keyed by source columns

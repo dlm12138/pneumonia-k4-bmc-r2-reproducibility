@@ -1,0 +1,7 @@
+outcome	DBSOURCE	N	assigned_N	unassigned_N	assignment_rate	selected_outcome_events	structural_no_support
+death_24h	both	31	6	25	0.1935483870967742	0	False
+death_24h	carevue	5173	0	5173	0.0	0	True
+death_24h	metavision	3862	3684	178	0.953909891248058	56	False
+hospital_mortality	both	31	6	25	0.1935483870967742	3	False
+hospital_mortality	carevue	5173	0	5173	0.0	0	True
+hospital_mortality	metavision	3862	3684	178	0.953909891248058	711	False
