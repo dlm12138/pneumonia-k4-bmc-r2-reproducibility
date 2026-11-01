@@ -2,7 +2,7 @@
 
 This repository contains analysis implementations, aggregate results and documentation for **Early physiological phenotypes and mortality within 24 hours after a 12-hour landmark in pneumonia-associated critical illness: a three-database cohort study**.
 
-The results correspond to the strict pneumonia-evidence application cohorts and corrected peripheral pulse-oxygen source analysed on 2026-10-15. This is research software, not a validated clinical decision tool. K4 did not demonstrate a stable incremental predictive advantage over simpler assessments.
+The results correspond to the strict pneumonia-evidence application cohorts and corrected peripheral pulse-oxygen source analysed on 2026-10-15, with whole-hospital mortality and its selection-weighting summaries corrected on 2026-11-01. See [the result-table notes](docs/results_notes.md) for the endpoint definition and affected summaries. This is research software, not a validated clinical decision tool. K4 did not demonstrate a stable incremental predictive advantage over simpler assessments.
 
 ## Contents
 
