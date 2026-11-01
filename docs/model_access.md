@@ -12,4 +12,4 @@ Excluded assets include the original standardisation means/SDs, component weight
 
 Appropriately credentialed researchers may contact the corresponding author using the contact information in the manuscript to ask about a compliant reproduction arrangement, stating their proposed use and access qualifications. This is a consultation route, not a guarantee of transfer. The authors must first determine applicable permissions and an approved distribution mechanism. No parameter-download URL or automatic entitlement is available.
 
-Consequently, the present package provides inspectable model mathematics and downstream code, **not a fully publicly available locked numerical model**. Exact new-patient assignment and parameter-dependent diagnostics remain unavailable from public files alone. The documented model-access request remains only partially addressed.
+Consequently, the present package provides inspectable model mathematics and downstream code, **not a fully publicly available locked numerical model**. Exact new-patient assignment and parameter-dependent diagnostics remain unavailable from public files alone.
